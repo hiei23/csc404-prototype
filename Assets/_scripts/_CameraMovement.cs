@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraMovement : MonoBehaviour {
+public class _CameraMovement : MonoBehaviour {
 
     public Camera mainCamera;
     public GameObject player1;
