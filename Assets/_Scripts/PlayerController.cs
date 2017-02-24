@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour
         {
             h = Input.GetAxisRaw("HorizontalP2");
             v = Input.GetAxisRaw("VerticalP2");
-            j = Input.GetAxisRaw("JumpP2");
+            j = Input.GetAxisRaw("JumpP2"); 
         }
 
         // Move the player around the scene.
