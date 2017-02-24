@@ -44,7 +44,7 @@ public class Climb : MonoBehaviour {
 
     void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.tag == "Curtain")
+        if (other.gameObject.tag == "climbable")
         {
             rb.isKinematic = true;
             isClimbing = !isClimbing;
@@ -54,7 +54,7 @@ public class Climb : MonoBehaviour {
 
     void OnCollisionExit(Collision other)
     {
-        if (other.gameObject.tag == "Curtain")
+        if (other.gameObject.tag == "climbable")
         {
             rb.isKinematic = false;
             isClimbing = !isClimbing;
