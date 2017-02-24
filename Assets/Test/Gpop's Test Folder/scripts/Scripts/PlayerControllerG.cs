@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class _PlayerController : MonoBehaviour
+public class PlayerControllerG : MonoBehaviour
 {
 
     public float speed = 6f;            // The speed that the player will move at
