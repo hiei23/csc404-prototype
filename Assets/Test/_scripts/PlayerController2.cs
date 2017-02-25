@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerController2 : MonoBehaviour
 {
-    public float speed = 6.0F;
+    public float speed = 10.0F;
     public float climbSpeed = 5.0F;
     public float jumpSpeed = 8.0F;
     public float gravity = 20.0F;
@@ -24,18 +24,31 @@ public class PlayerController2 : MonoBehaviour
 
     void Update()
     {
+        float h = 0.0f;
+        float v = 0.0f;
+        if (gameObject.tag.Equals("Player1"))
+        {
+            h = Input.GetAxisRaw("HorizontalP1");
+            v = Input.GetAxisRaw("VerticalP1");
+        }
+        else
+        {
+            h = -Input.GetAxisRaw("HorizontalP2");
+            v = Input.GetAxisRaw("VerticalP2");
+        }
+
         if (controller.isGrounded)
         {
-            moveDirection = new Vector3(Input.GetAxisRaw("HorizontalP1"), 0, Input.GetAxisRaw("VerticalP1"));
+            moveDirection = new Vector3(h, 0, v);
             moveDirection *= speed;
-            if (Input.GetButton("JumpP1"))
+            if ((gameObject.tag.Equals("Player1") && Input.GetButton("JumpP1")) || (gameObject.tag.Equals("Player1") && Input.GetButton("JumpP2")))
                 moveDirection.y = jumpSpeed;
-            if (Input.GetButton("GroundP1"))
+            if ((gameObject.tag.Equals("Player1") && Input.GetButton("GroundP1")) || (gameObject.tag.Equals("Player1") && Input.GetButton("GroundP2")))
                 moveDirection = Vector3.zero;
         }
         if (isClimbing)
         {
-            moveDirection = new Vector3(Input.GetAxisRaw("HorizontalP1"), 0, Input.GetAxisRaw("VerticalP1"));
+            moveDirection = new Vector3(h, 0, v);
             moveDirection.y = moveDirection.magnitude * climbSpeed;
         }
         else
