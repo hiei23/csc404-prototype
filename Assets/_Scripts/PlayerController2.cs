@@ -41,9 +41,9 @@ public class PlayerController2 : MonoBehaviour
         {
             moveDirection = new Vector3(h, 0, v);
             moveDirection *= speed;
-            if ((gameObject.tag.Equals("Player1") && Input.GetButton("JumpP1")) || (gameObject.tag.Equals("Player1") && Input.GetButton("JumpP2")))
+            if ((gameObject.tag.Equals("Player1") && Input.GetButton("JumpP1")) || (gameObject.tag.Equals("Player2") && Input.GetButton("JumpP2")))
                 moveDirection.y = jumpSpeed;
-            if ((gameObject.tag.Equals("Player1") && Input.GetButton("GroundP1")) || (gameObject.tag.Equals("Player1") && Input.GetButton("GroundP2")))
+            if ((gameObject.tag.Equals("Player1") && Input.GetButton("GroundP1")) || (gameObject.tag.Equals("Player2") && Input.GetButton("GroundP2")))
                 moveDirection = Vector3.zero;
         }
         if (isClimbing)
