@@ -6,7 +6,7 @@ TagManager:
   tags:
   - Player2
   - Player1
-  - ClimbWall
+  - Climbable
   layers:
   - Default
   - TransparentFX

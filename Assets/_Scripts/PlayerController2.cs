@@ -37,7 +37,8 @@ public class PlayerController2 : MonoBehaviour
             v = Input.GetAxisRaw("VerticalP2");
         }
 
-        if (controller.isGrounded)
+
+        if (GroundCheck())
         {
             moveDirection = new Vector3(h, 0, v);
             moveDirection *= speed;
@@ -46,6 +47,7 @@ public class PlayerController2 : MonoBehaviour
             if ((gameObject.tag.Equals("Player1") && Input.GetButton("GroundP1")) || (gameObject.tag.Equals("Player2") && Input.GetButton("GroundP2")))
                 moveDirection = Vector3.zero;
         }
+        /*
         if (isClimbing)
         {
             moveDirection = new Vector3(h, 0, v);
@@ -62,8 +64,9 @@ public class PlayerController2 : MonoBehaviour
                 Quaternion.LookRotation(moveDirection),
                 Time.deltaTime * speed
             );
-        }
-        controller.Move(moveDirection * Time.deltaTime);
+        }*/
+        //controller.Move(moveDirection * Time.deltaTime);
+        transform.Translate(moveDirection * Time.deltaTime);
     }
 
     void OnCollisionEnter(Collision other)
@@ -84,6 +87,23 @@ public class PlayerController2 : MonoBehaviour
             Debug.Log("Collision Exit\n");
         }
     }
+
+    private bool GroundCheck()
+    {
+        RaycastHit hit;
+        float distance = 1f;
+        Vector3 dir = new Vector3(0, -1);
+
+        if (Physics.Raycast(transform.position, dir, out hit, distance))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
 
     private enum HitDirection { None, Top, Bottom, Forward, Back, Left, Right }
     private HitDirection ReturnDirection(GameObject Object, GameObject ObjectHit)
