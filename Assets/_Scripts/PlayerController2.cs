@@ -68,8 +68,8 @@ public class PlayerController2 : MonoBehaviour
 
     void OnCollisionEnter(Collision other)
     {
-        HitDirection d = ReturnDirection(other.gameObject, this.gameObject);
-        if (other.gameObject.tag == "Wall" && (d != HitDirection.Top || d != HitDirection.Bottom))
+        Debug.Log(other.gameObject.tag);
+        if (other.gameObject.tag == "Climbable")
         {
             isClimbing = true;
             Debug.Log("Collision enter box\n");
@@ -78,8 +78,7 @@ public class PlayerController2 : MonoBehaviour
 
     void OnCollisionExit(Collision other)
     {
-        HitDirection d = ReturnDirection(other.gameObject, this.gameObject);
-        if (other.gameObject.tag == "Wall" || d == HitDirection.Top || d == HitDirection.Bottom)
+        if (other.gameObject.tag == "Climbable")
         {
             isClimbing = false;
             Debug.Log("Collision Exit\n");
