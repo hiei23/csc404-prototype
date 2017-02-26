@@ -5,8 +5,8 @@ using UnityEngine;
 public class PlayerController3 : MonoBehaviour
 {
     public float speed = 10.0F;
-    public float climbSpeed = 5.0F;
-    public float jumpSpeed = 8.0F;
+    public float climbSpeed = 10.0F;
+    public float jumpSpeed = 10.0F;
     public float gravity = 20.0F;
     public bool isClimbing;
     private Vector3 moveDirection = Vector3.zero;
@@ -40,7 +40,7 @@ public class PlayerController3 : MonoBehaviour
         moveDirection = new Vector3(h, 0, v);
         moveDirection *= speed;
         if (((gameObject.tag.Equals("Player1") && Input.GetButton("JumpP1")) || (gameObject.tag.Equals("Player2") && Input.GetButton("JumpP2"))) && CheckGround())
-            moveDirection.y = jumpSpeed;
+            rb.AddForce(new Vector3(0, jumpSpeed, 0), ForceMode.Impulse);
         if (((gameObject.tag.Equals("Player1") && Input.GetButton("GroundP1")) || (gameObject.tag.Equals("Player2") && Input.GetButton("GroundP2"))) && CheckGround())
             moveDirection = Vector3.zero;
 
@@ -64,7 +64,6 @@ public class PlayerController3 : MonoBehaviour
 
     void OnCollisionEnter(Collision other)
     {
-        Debug.Log(other.gameObject.tag);
         if (other.gameObject.tag == "Climbable")
         {
             isClimbing = true;
