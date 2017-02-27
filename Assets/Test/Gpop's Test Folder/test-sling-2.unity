@@ -1685,7 +1685,7 @@ SpringJoint:
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: -3.75, y: 0.47500038, z: 0}
   serializedVersion: 2
-  m_Spring: 100
+  m_Spring: 100000
   m_Damper: 0.2
   m_MinDistance: 0.1
   m_MaxDistance: 10
