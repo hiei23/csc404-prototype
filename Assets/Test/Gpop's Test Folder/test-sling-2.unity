@@ -103,6 +103,7 @@ GameObject:
   - component: {fileID: 50306747}
   - component: {fileID: 50306746}
   - component: {fileID: 50306745}
+  - component: {fileID: 50306750}
   - component: {fileID: 50306744}
   m_Layer: 0
   m_Name: Player2
@@ -111,18 +112,26 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &50306744
-MonoBehaviour:
+--- !u!145 &50306744
+SpringJoint:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 50306743}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: beb4a2cf0ca2fff4fbcd83881cb64697, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 6
+  m_ConnectedBody: {fileID: 1460225978}
+  m_Anchor: {x: 0, y: 0.5, z: 0}
+  m_AutoConfigureConnectedAnchor: 1
+  m_ConnectedAnchor: {x: 3.75, y: 0.5249996, z: 0}
+  serializedVersion: 2
+  m_Spring: 10
+  m_Damper: 0.2
+  m_MinDistance: 0
+  m_MaxDistance: 10
+  m_Tolerance: 0.025
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_EnableCollision: 1
+  m_EnablePreprocessing: 1
 --- !u!54 &50306745
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -136,7 +145,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!23 &50306746
 MeshRenderer:
@@ -201,6 +210,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &50306750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 50306743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 499ad2e4d9cdb2c43b8d21d3e72a3254, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 10
+  climbSpeed: 10
+  jumpSpeed: 0.5
+  gravity: 10
+  isClimbing: 0
 --- !u!1 &246169595
 GameObject:
   m_ObjectHideFlags: 0
@@ -1432,6 +1457,87 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!1 &1413199228
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1413199232}
+  - component: {fileID: 1413199231}
+  - component: {fileID: 1413199230}
+  - component: {fileID: 1413199229}
+  m_Layer: 0
+  m_Name: Cube (1)
+  m_TagString: Climbable
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!23 &1413199229
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1413199228}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+--- !u!65 &1413199230
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1413199228}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!33 &1413199231
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1413199228}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1413199232
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1413199228}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 9.37, y: 1.58, z: 0}
+  m_LocalScale: {x: 4.22, y: 3.06, z: 2.87}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1460225976
 GameObject:
   m_ObjectHideFlags: 0
@@ -1444,10 +1550,9 @@ GameObject:
   - component: {fileID: 1460225980}
   - component: {fileID: 1460225979}
   - component: {fileID: 1460225978}
-  - component: {fileID: 1460225977}
   - component: {fileID: 1460225985}
   - component: {fileID: 1460225984}
-  - component: {fileID: 1460225983}
+  - component: {fileID: 1460225977}
   m_Layer: 0
   m_Name: Player1
   m_TagString: Player1
@@ -1463,10 +1568,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1460225976}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: beb4a2cf0ca2fff4fbcd83881cb64697, type: 3}
+  m_Script: {fileID: 11500000, guid: 499ad2e4d9cdb2c43b8d21d3e72a3254, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 6
+  speed: 10
+  climbSpeed: 10
+  jumpSpeed: 0.5
+  gravity: 10
+  isClimbing: 0
 --- !u!54 &1460225978
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1480,7 +1589,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!23 &1460225979
 MeshRenderer:
@@ -1545,17 +1654,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1460225983
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1460225976}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd91f2861ee771c419cb6ce545980405, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1460225984
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1590,11 +1688,11 @@ SpringJoint:
   m_Spring: 100
   m_Damper: 0.2
   m_MinDistance: 0.1
-  m_MaxDistance: 2
+  m_MaxDistance: 10
   m_Tolerance: 0.025
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
-  m_EnableCollision: 0
+  m_EnableCollision: 1
   m_EnablePreprocessing: 1
 --- !u!1 &1468584872
 GameObject:
@@ -2663,7 +2761,7 @@ GameObject:
   - component: {fileID: 2101106034}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: Climbable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
