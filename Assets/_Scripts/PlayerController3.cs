@@ -24,6 +24,7 @@ public class PlayerController3 : MonoBehaviour
 
     void Update()
     {
+        rb.isKinematic = false;
         float h = 0.0f;
         float v = 0.0f;
         if (gameObject.tag.Equals("Player1"))
@@ -42,7 +43,11 @@ public class PlayerController3 : MonoBehaviour
         if (((gameObject.tag.Equals("Player1") && Input.GetButton("JumpP1")) || (gameObject.tag.Equals("Player2") && Input.GetButton("JumpP2"))) && CheckGround())
             rb.AddForce(new Vector3(0, jumpSpeed, 0), ForceMode.Impulse);
         if (((gameObject.tag.Equals("Player1") && Input.GetButton("GroundP1")) || (gameObject.tag.Equals("Player2") && Input.GetButton("GroundP2"))) && CheckGround())
-            moveDirection = Vector3.zero;
+        {
+            moveDirection = new Vector3(h, 0, v);
+            moveDirection *= speed / 4;
+            rb.isKinematic = true;
+        }
 
         if (isClimbing)
         {
