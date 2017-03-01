@@ -26,8 +26,8 @@ public class CameraMove1 : MonoBehaviour {
         //animator = gameObject.GetComponentInParent<Animator>();
         cam1Ani = cam1.GetComponent<Animator>();
         //stage1initialposP1 = player1.transform.position;
-        stage2initialposP1 = new Vector3(128, 3, 129);
-        stage2initialposP2 = new Vector3(148, 3, 128);
+        stage2initialposP1 = new Vector3(-8, 1, 131);
+        stage2initialposP2 = new Vector3(-3, 1, 120);
 
     }
 	
