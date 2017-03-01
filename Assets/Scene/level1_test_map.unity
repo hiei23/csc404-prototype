@@ -418,7 +418,7 @@ MonoBehaviour:
   cableLength: 4
   totalSegments: 0
   segmentsPerUnit: 6
-  cableWidth: 0.06
+  cableWidth: 1
   verletIterations: 1
   solverIterations: 2
   stiffness: 0.5
@@ -436,7 +436,7 @@ SpringJoint:
   m_Spring: 100000
   m_Damper: 0.2
   m_MinDistance: 0.1
-  m_MaxDistance: 10
+  m_MaxDistance: 20
   m_Tolerance: 0.025
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
@@ -5636,10 +5636,10 @@ SpringJoint:
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 1.6675, y: 0.50000006, z: -1.34}
   serializedVersion: 2
-  m_Spring: 10
+  m_Spring: 100000
   m_Damper: 0.2
   m_MinDistance: 0
-  m_MaxDistance: 10
+  m_MaxDistance: 20
   m_Tolerance: 0.025
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
