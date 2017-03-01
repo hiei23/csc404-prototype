@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44641, g: 0.49622738, b: 0.5747192, a: 1}
+  m_IndirectSpecularColor: {r: 0.44640982, g: 0.4962271, b: 0.57471824, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -397,9 +397,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 499ad2e4d9cdb2c43b8d21d3e72a3254, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 20
   climbSpeed: 10
-  jumpSpeed: 0.5
+  jumpSpeed: 1.5
   gravity: 10
   isClimbing: 0
 --- !u!114 &46173518
@@ -431,7 +431,7 @@ SpringJoint:
   m_ConnectedBody: {fileID: 1110695878}
   m_Anchor: {x: 0, y: 0.5, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -5, y: 0.5, z: 5.36}
+  m_ConnectedAnchor: {x: -1.6675, y: 0.50000006, z: 1.34}
   serializedVersion: 2
   m_Spring: 100000
   m_Damper: 0.2
@@ -514,8 +514,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 46173516}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -19.77, y: 1, z: 4.71}
-  m_LocalScale: {x: 1, y: 2, z: 1}
+  m_LocalPosition: {x: -19.77, y: 3.3, z: 4.71}
+  m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -5604,8 +5604,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1110695876}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.77, y: 1, z: -0.65}
-  m_LocalScale: {x: 1, y: 2, z: 1}
+  m_LocalPosition: {x: -13.1, y: 3.3, z: -0.65}
+  m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -5634,7 +5634,7 @@ SpringJoint:
   m_ConnectedBody: {fileID: 46173520}
   m_Anchor: {x: 0, y: 0.5, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 5, y: 0.5, z: -5.36}
+  m_ConnectedAnchor: {x: 1.6675, y: 0.50000006, z: -1.34}
   serializedVersion: 2
   m_Spring: 10
   m_Damper: 0.2
@@ -5656,9 +5656,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 499ad2e4d9cdb2c43b8d21d3e72a3254, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 20
   climbSpeed: 10
-  jumpSpeed: 0.5
+  jumpSpeed: 1.5
   gravity: 10
   isClimbing: 0
 --- !u!23 &1110695881
