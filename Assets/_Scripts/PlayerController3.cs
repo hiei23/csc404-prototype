@@ -27,28 +27,41 @@ public class PlayerController3 : MonoBehaviour
         rb.isKinematic = false;
         float h = 0.0f;
         float v = 0.0f;
+        float d = 0.0f;
+        Vector3 delta = new Vector3(0, 0, 0);
+        GameObject other;
         if (gameObject.tag.Equals("Player1"))
         {
             h = Input.GetAxisRaw("HorizontalP1");
             v = Input.GetAxisRaw("VerticalP1");
+            other = GameObject.FindWithTag("Player2");
         }
         else
         {
             h = -Input.GetAxisRaw("HorizontalP2");
             v = Input.GetAxisRaw("VerticalP2");
+            other = GameObject.FindWithTag("Player1");
         }
 
-        moveDirection = new Vector3(h, 0, v);
+        moveDirection = new Vector3(h, d, v);
         moveDirection *= speed;
         if (((gameObject.tag.Equals("Player1") && Input.GetButton("JumpP1")) || (gameObject.tag.Equals("Player2") && Input.GetButton("JumpP2"))) && CheckGround())
             rb.AddForce(new Vector3(0, jumpSpeed, 0), ForceMode.Impulse);
         if (((gameObject.tag.Equals("Player1") && Input.GetButton("GroundP1")) || (gameObject.tag.Equals("Player2") && Input.GetButton("GroundP2"))) && CheckGround())
         {
-            moveDirection = new Vector3(h, 0, v);
+            moveDirection = new Vector3(h, d, v);
             moveDirection *= speed / 4;
             rb.isKinematic = true;
         }
-
+        if (((gameObject.tag.Equals("Player1") && Input.GetButton("ReturnP1")) || (gameObject.tag.Equals("Player2") && Input.GetButton("ReturnP2"))))
+        {
+            delta = other.transform.position - transform.position;
+            h = delta.x == 0 ? 0 : (delta.x > 0 ? 1 : -1);
+            v = delta.y == 0 ? 0 : (delta.y > 0 ? 1 : -1);
+            d = delta.z == 0 ? 0 : (delta.z > 0 ? 1 : -1);
+            moveDirection = new Vector3(h, d, v);
+            moveDirection *= speed;
+        }
         if (isClimbing)
         {
             moveDirection = new Vector3(h, 0, v);
