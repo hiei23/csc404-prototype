@@ -16,6 +16,7 @@ public class DoorButton : MonoBehaviour {
         if (col.gameObject.tag == "Player1" || col.gameObject.tag == "Player2")
         {
             animator.SetTrigger("Open");
+
         }
     }
 }
