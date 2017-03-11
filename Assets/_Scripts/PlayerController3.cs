@@ -44,6 +44,8 @@ public class PlayerController3 : MonoBehaviour
         }
 
         moveDirection = new Vector3(h, d, v);
+        moveDirection = Camera.main.transform.TransformDirection(moveDirection);
+        moveDirection.y = 0;
         moveDirection *= speed;
         if (((gameObject.tag.Equals("Player1") && Input.GetButton("JumpP1")) || (gameObject.tag.Equals("Player2") && Input.GetButton("JumpP2"))) && CheckGround())
             rb.AddForce(new Vector3(0, jumpSpeed, 0), ForceMode.Impulse);
@@ -68,16 +70,17 @@ public class PlayerController3 : MonoBehaviour
             moveDirection.y = moveDirection.magnitude * climbSpeed;
         }
 
-        transform.Translate(moveDirection * Time.deltaTime);
-        /*if (moveDirection != Vector3.zero && moveDirection.y == 0)
+        rb.AddForce(moveDirection * Time.deltaTime * 100);
+        /*
+        if (moveDirection != Vector3.zero && moveDirection.y == 0)
         {
-            transform.rotation = Quaternion.Slerp(
-                transform.rotation,
-                Quaternion.LookRotation(moveDirection),
-                Time.deltaTime * speed
-            );
+            Quaternion targetRotation = Quaternion.LookRotation(moveDirection, Vector3.up);
+            float rotationSpeed = 100.0f;
+            Quaternion newRotation = Quaternion.Lerp(rb.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+                 
+            //Apply the rotation
+            rb.MoveRotation(newRotation);
         }*/
-
     }
 
     void OnCollisionEnter(Collision other)
