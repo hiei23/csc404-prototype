@@ -50,12 +50,6 @@ public class PlayerController3 : MonoBehaviour
         moveDirection *= speed;
         if (((gameObject.tag.Equals("Player1") && Input.GetButton("JumpP1")) || (gameObject.tag.Equals("Player2") && Input.GetButton("JumpP2"))) && CheckGround())
             rb.AddForce(new Vector3(0, jumpSpeed, 0), ForceMode.Impulse);
-        if (((gameObject.tag.Equals("Player1") && Input.GetButton("GroundP1")) || (gameObject.tag.Equals("Player2") && Input.GetButton("GroundP2"))) && CheckGround())
-        {
-            moveDirection = new Vector3(h, d, v);
-            moveDirection *= speed / 4;
-            rb.isKinematic = true;
-        }
         if (((gameObject.tag.Equals("Player1") && Input.GetButton("ReturnP1")) || (gameObject.tag.Equals("Player2") && Input.GetButton("ReturnP2"))))
         {
             delta = other.transform.position - transform.position;
@@ -71,14 +65,27 @@ public class PlayerController3 : MonoBehaviour
             moveDirection.y = moveDirection.magnitude * climbSpeed;
         }
 
-        if (rb.velocity.magnitude > maxSpeed)
+
+        if (((gameObject.tag.Equals("Player1") && Input.GetButton("GroundP1")) || (gameObject.tag.Equals("Player2") && Input.GetButton("GroundP2"))) && CheckGround())
         {
-            rb.velocity = rb.velocity.normalized * maxSpeed;
+            moveDirection = new Vector3(h, d, v);
+            moveDirection *= speed / 4;
+            moveDirection = Camera.main.transform.TransformDirection(moveDirection);
+            moveDirection.y = 0;
+            rb.isKinematic = true;
+            transform.Translate(moveDirection * Time.deltaTime);
         }
         else
         {
+            if (rb.velocity.magnitude > maxSpeed)
+            {
+                rb.velocity = rb.velocity.normalized * maxSpeed;
+            }
+            else
+            {
 
-            rb.AddForce(moveDirection * Time.deltaTime * 100);
+                rb.AddForce(moveDirection * Time.deltaTime * 100);
+            }
         }
         /*
         if (moveDirection != Vector3.zero && moveDirection.y == 0)
