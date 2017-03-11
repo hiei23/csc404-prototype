@@ -8,6 +8,7 @@ public class PlayerController3 : MonoBehaviour
     public float climbSpeed = 10.0F;
     public float jumpSpeed = 10.0F;
     public float gravity = 20.0F;
+    public float maxSpeed = 1.0F;
     public bool isClimbing;
     private Vector3 moveDirection = Vector3.zero;
     private CharacterController controller;
@@ -70,7 +71,15 @@ public class PlayerController3 : MonoBehaviour
             moveDirection.y = moveDirection.magnitude * climbSpeed;
         }
 
-        rb.AddForce(moveDirection * Time.deltaTime * 100);
+        if (rb.velocity.magnitude > maxSpeed)
+        {
+            rb.velocity = rb.velocity.normalized * maxSpeed;
+        }
+        else
+        {
+
+            rb.AddForce(moveDirection * Time.deltaTime * 100);
+        }
         /*
         if (moveDirection != Vector3.zero && moveDirection.y == 0)
         {
