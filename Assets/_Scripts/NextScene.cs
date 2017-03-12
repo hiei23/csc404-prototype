@@ -14,7 +14,7 @@ public class NextScene : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if(Input.GetAxisRaw("Jump") > 0)
+        if(Input.GetAxisRaw("Submit") > 0)
             SceneManager.LoadScene(sceneIndex);
     }
 }
