@@ -7,6 +7,8 @@ TagManager:
   - Player2
   - Player1
   - Climbable
+  - Breakable
+  - Snack
   layers:
   - Default
   - TransparentFX

@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 114362855798239746}
   m_Layer: 0
   m_Name: BreakableTest
-  m_TagString: Untagged
+  m_TagString: Breakable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -109,6 +109,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pieces: {fileID: 1647975595456652, guid: 147b4a107f2e3c2468c62c6c0599d9c9, type: 2}
+  force: 0
 --- !u!136 &136682763501534964
 CapsuleCollider:
   m_ObjectHideFlags: 1
