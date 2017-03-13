@@ -11,12 +11,12 @@ public class CameraMove2 : MonoBehaviour {
     public float runDistance;
     public float height;
 
-    public float xSpeed = 250.0F;
-    public float ySpeed = 120.0F;
+    //public float xSpeed = 250.0F;
+    //public float ySpeed = 120.0F;
 
     private Transform cameraTransform;
-    private float x;
-    private float y;
+    //private float x;
+    //private float y;
 
 
     //private Vector3 offset;
@@ -28,17 +28,11 @@ public class CameraMove2 : MonoBehaviour {
         cameraTransform = transform;
     }
 
-    private void Update()
-    {
-
-    }
-
     void LateUpdate()
     {
         //transform.position = player1.transform.position + offset;
         cameraTransform.position = new Vector3(target.position.x, target.position.y + height, target.position.z - walkDistance);
         cameraTransform.LookAt(target);
-
     }
 
     /*
