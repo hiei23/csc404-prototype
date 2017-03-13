@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController3 : MonoBehaviour
 {
@@ -13,6 +14,9 @@ public class PlayerController3 : MonoBehaviour
     private Vector3 moveDirection = Vector3.zero;
     private CharacterController controller;
     private Rigidbody rb;
+
+    public Text countSnack;
+    private int countS;
 
     void Awake()
     {
@@ -107,6 +111,18 @@ public class PlayerController3 : MonoBehaviour
             rb.useGravity = false;
             Debug.Log("Collision enter box\n");
         }
+
+
+        if (other.gameObject.CompareTag("Snack"))
+        {
+            //other.gameObject.SetActive(false);
+            Debug.Log("Snack!\n");
+            countS = int.Parse(countSnack.text) + 1;
+            SetCountText();
+        }
+
+
+
     }
 
     void OnCollisionExit(Collision other)
@@ -123,6 +139,11 @@ public class PlayerController3 : MonoBehaviour
     {
         Vector3 down = transform.TransformDirection(Vector3.down);
         return Physics.Raycast(transform.position, down, 2.5f);
+    }
+
+    void SetCountText()
+    {
+        countSnack.text = countS.ToString();
     }
 
 }
