@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿
 using UnityEngine;
-using UnityEngine.UI;
+
 
 public class PlayerController3 : MonoBehaviour
 {
@@ -16,16 +14,13 @@ public class PlayerController3 : MonoBehaviour
     private CharacterController controller;
     private Rigidbody rb;
 
-    public Text countSnack;
-    private int total_snacks;
-    private int MAX_SNACKS = 16;
     void Awake()
     {
         controller = GetComponent<CharacterController>();
         rb = GetComponent<Rigidbody>();
         isClimbing = false;
         rb.isKinematic = false;
-        total_snacks = 0;
+
     }
 
 
@@ -114,14 +109,7 @@ public class PlayerController3 : MonoBehaviour
             Debug.Log("Collision enter box\n");
         }
 
-
-        if (other.gameObject.CompareTag("Snack"))
-        {
-            //other.gameObject.SetActive(false);
-            Debug.Log("Snack!\n");
-            total_snacks++;
-            SetCountText();
-        }
+       
     }
 
     void OnCollisionExit(Collision other)
@@ -140,11 +128,5 @@ public class PlayerController3 : MonoBehaviour
         return Physics.Raycast(transform.position, down, 2.5f);
     }
 
-    void SetCountText()
-    {
-        int remaining = MAX_SNACKS - total_snacks;
-        string counter_label = String.Format("Total Number of Snacks left: {0}" , remaining);
-        countSnack.text = counter_label;
-    }
-
+    
 }
