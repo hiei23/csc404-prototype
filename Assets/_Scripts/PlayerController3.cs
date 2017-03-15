@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerController3 : MonoBehaviour
 {
+	public GameObject otherPlayer;
     public float speed = 10.0F;
     public float climbSpeed = 10.0F;
     public float jumpSpeed = 10.0F;
@@ -13,11 +14,14 @@ public class PlayerController3 : MonoBehaviour
     private Vector3 moveDirection = Vector3.zero;
     private CharacterController controller;
     private Rigidbody rb;
+	private Rigidbody rb2;
 
     void Awake()
     {
-        controller = GetComponent<CharacterController>();
+        //controller = GetComponent<CharacterController>();
         rb = GetComponent<Rigidbody>();
+		rb2 = otherPlayer.GetComponent<Rigidbody>();
+		//rb2 = otherPlayer.GetComponent<Rigidbody>();
         isClimbing = false;
         rb.isKinematic = false;
 
@@ -51,7 +55,7 @@ public class PlayerController3 : MonoBehaviour
         moveDirection *= speed;
         if (((gameObject.tag.Equals("Player1") && Input.GetButton("JumpP1")) || (gameObject.tag.Equals("Player2") && Input.GetButton("JumpP2"))) && CheckGround())
             rb.AddForce(new Vector3(0, jumpSpeed, 0), ForceMode.Impulse);
-        if (((gameObject.tag.Equals("Player1") && Input.GetButton("ReturnP1")) || (gameObject.tag.Equals("Player2") && Input.GetButton("ReturnP2"))))
+        /*if (((gameObject.tag.Equals("Player1") && Input.GetButton("ReturnP1")) || (gameObject.tag.Equals("Player2") && Input.GetButton("ReturnP2"))))
         {
             delta = other.transform.position - transform.position;
             h = delta.x == 0 ? 0 : (delta.x > 0 ? 1 : -1);
@@ -59,7 +63,19 @@ public class PlayerController3 : MonoBehaviour
             d = delta.z == 0 ? 0 : (delta.z > 0 ? 1 : -1);
             moveDirection = new Vector3(h, d, v);
             moveDirection *= speed;
+        }*/
+		
+		if (((gameObject.tag.Equals("Player1") && Input.GetButton("ThrowP1")) || (gameObject.tag.Equals("Player2") && Input.GetButton("ThrowP2"))) && CheckGround())
+        {
+            delta = otherPlayer.transform.position - transform.position;
+            h = delta.x == 0 ? 0 : (delta.x > 0 ? 1 : -1);
+            v = delta.y == 0 ? 0 : (delta.y > 0 ? 1 : -1);
+            d = delta.z == 0 ? 0 : (delta.z > 0 ? 1 : -1);
+            moveDirection = new Vector3(h, d+10, v);
+            moveDirection *= speed;
+			rb.isKinematic = true;
         }
+		
         if (isClimbing)
         {
             moveDirection = new Vector3(h, 0, v);
@@ -76,6 +92,12 @@ public class PlayerController3 : MonoBehaviour
             rb.isKinematic = true;
             transform.Translate(moveDirection * Time.deltaTime);
         }
+		
+		/*if ((gameObject.tag.Equals("Player1") && Input.GetButtonUp("GroundP1")))
+		{
+            moveDirection = new Vector3(0, 10, 0);
+		}*/
+		
         else
         {
             if (rb.velocity.magnitude > maxSpeed)
@@ -84,10 +106,19 @@ public class PlayerController3 : MonoBehaviour
             }
             else
             {
-
-                rb.AddForce(moveDirection * Time.deltaTime * 100);
+				if (((gameObject.tag.Equals("Player1") && Input.GetButton("ThrowP1")) || (gameObject.tag.Equals("Player2") && Input.GetButton("ThrowP2"))) && CheckGround())
+				{
+					rb2.AddForce(moveDirection * Time.deltaTime * 100);
+				}
+				
+				else
+				{
+					rb.AddForce(moveDirection * Time.deltaTime * 100);
+				}
             }
         }
+		
+		
         /*
         if (moveDirection != Vector3.zero && moveDirection.y == 0)
         {
