@@ -11,6 +11,7 @@ public class Breakable : MonoBehaviour {
 
     void OnCollisionEnter(Collision collision){
         rb = collision.gameObject.GetComponent<Rigidbody>();
+        Debug.Log("snack collision");
         if (rb) {
             if (rb.velocity.magnitude > force &&
                 (collision.gameObject.tag == "Player1" ||
