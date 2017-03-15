@@ -100,7 +100,7 @@ public class PlayerController3 : MonoBehaviour
 		
         else
         {
-            if (rb.velocity.magnitude > maxSpeed && v != 0 && h != 0)
+            if (rb.velocity.magnitude > maxSpeed && (v != 0 || h != 0))
             {
                 rb.velocity = rb.velocity.normalized * maxSpeed;
             }
