@@ -155,7 +155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a731a381ca03ac64b975505a8dae23b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pieces: {fileID: 1521298031762130, guid: f72206b54064d0c47852d08e0feafb3f, type: 2}
+  pieces: {fileID: 1917041315626984, guid: 9952acb0bcb248d47abfbf0785d4aeb2, type: 2}
   force: 0
 --- !u!135 &135410027484478180
 SphereCollider:
