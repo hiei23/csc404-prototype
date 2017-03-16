@@ -156,7 +156,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pieces: {fileID: 1917041315626984, guid: 9952acb0bcb248d47abfbf0785d4aeb2, type: 2}
-  force: 0
+  force: 7
 --- !u!135 &135410027484478180
 SphereCollider:
   m_ObjectHideFlags: 1
