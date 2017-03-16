@@ -33,11 +33,12 @@ public class CameraMove22 : MonoBehaviour {
     }
 
     void LateUpdate()
-    {
-        
+    {   
+        // Input.GetAxis("Axis4P2")
+        // Input.GetAxis("Axis5P2")
 
-        offsetX = Quaternion.AngleAxis(Input.GetAxis("Axis4P1") * RotateSpeed * Time.deltaTime, Vector3.up) * offsetX;
-        offsetY = Quaternion.AngleAxis(Input.GetAxis("Axis5P1") * RotateSpeed * Time.deltaTime, Vector3.right) * offsetY;
+        offsetX = Quaternion.AngleAxis((Input.GetAxis("Axis4P1") + Input.GetAxis("Axis4P2")) * RotateSpeed * Time.deltaTime, Vector3.up) * offsetX;
+        offsetY = Quaternion.AngleAxis((Input.GetAxis("Axis5P1") + Input.GetAxis("Axis5P2")) * RotateSpeed * Time.deltaTime, Vector3.right) * offsetY;
 
         cameraTransform.position = new Vector3(target.position.x, target.position.y + height, target.position.z - walkDistance) + offsetX + offsetY;
         cameraTransform.LookAt(target);
