@@ -7,7 +7,7 @@ public class Breakable : MonoBehaviour {
     public GameObject pieces;
     public float force;
 
-    Rigidbody rb;
+    private Rigidbody rb;
 
     void OnCollisionEnter(Collision collision){
         rb = collision.gameObject.GetComponent<Rigidbody>();
