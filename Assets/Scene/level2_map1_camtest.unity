@@ -1121,9 +1121,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 99835377}
-  walkDistance: 40
+  walkDistance: 30
   runDistance: 8
-  height: 20
+  height: 15
   RotateSpeed: 30
 --- !u!114 &286059806
 MonoBehaviour:
@@ -1767,7 +1767,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1f98d959a2299d428b6a7ba94dd9c98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rm3_wall_south: {fileID: 0}
   rm1_wall_north: {fileID: 879131193}
 --- !u!65 &500608732
 BoxCollider:

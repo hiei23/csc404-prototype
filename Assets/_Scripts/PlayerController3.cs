@@ -60,7 +60,11 @@ public class PlayerController3 : MonoBehaviour
 
         //////////////////////////////////////////////////
 
-        Vector3 epsilon = Vector3.up * Input.GetAxis("Axis4P1");
+        
+        Vector3 epsilon = Vector3.up * Input.GetAxisRaw("Axis4P1");
+        if (Input.GetAxisRaw("Axis4P2") > Input.GetAxisRaw("Axis4P1"))
+            epsilon = Vector3.up * Input.GetAxisRaw("Axis4P2");
+
         transform.Rotate(epsilon * RotateSpeed * Time.deltaTime);
 
         /////////////////////////////////////////////

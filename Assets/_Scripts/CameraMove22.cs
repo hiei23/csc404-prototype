@@ -37,11 +37,16 @@ public class CameraMove22 : MonoBehaviour {
         // Input.GetAxis("Axis4P2")
         // Input.GetAxis("Axis5P2")
 
-        offsetX = Quaternion.AngleAxis((Input.GetAxis("Axis4P1") + Input.GetAxis("Axis4P2")) * RotateSpeed * Time.deltaTime, Vector3.up) * offsetX;
-        offsetY = Quaternion.AngleAxis((Input.GetAxis("Axis5P1") + Input.GetAxis("Axis5P2")) * RotateSpeed * Time.deltaTime, Vector3.right) * offsetY;
+        offsetX = Quaternion.AngleAxis((Input.GetAxisRaw("Axis4P1") + Input.GetAxisRaw("Axis4P2")) * RotateSpeed * Time.deltaTime, Vector3.up) * offsetX;
+        offsetY = Quaternion.AngleAxis((Input.GetAxisRaw("Axis5P1") + Input.GetAxisRaw("Axis5P2")) * RotateSpeed * Time.deltaTime, Vector3.right) * offsetY;
 
-        cameraTransform.position = new Vector3(target.position.x, target.position.y + height, target.position.z - walkDistance) + offsetX + offsetY;
-        cameraTransform.LookAt(target);
+        float moveX = Input.GetAxisRaw("Axis4P1") * RotateSpeed * Time.deltaTime;
+        float moveY = Input.GetAxisRaw("Axis4P2") * RotateSpeed * Time.deltaTime;
+
+        if (!Mathf.Approximately(moveX, 0f) || !Mathf.Approximately(moveY, 0f)) { 
+            cameraTransform.position = new Vector3(target.position.x, target.position.y + height, target.position.z - walkDistance) + offsetX + offsetY;
+            cameraTransform.LookAt(target);
+        }
 
     }
 
