@@ -7,14 +7,15 @@ public class Aura : MonoBehaviour
     // Use this for initialization
     public ParticleSystem jumpAura;
     public ParticleSystem slingAura;
+    public ParticleSystem throwAura;
     private Component parent;
 
     void Start()
     {
-        Component child;
         parent = GetComponent<Rigidbody>();
         slingAura.Stop();
         jumpAura.Stop();
+        throwAura.Stop();
     }
 
     // Update is called once per frame
@@ -45,7 +46,20 @@ public class Aura : MonoBehaviour
             return;
         }
 
+        if ((Input.GetAxisRaw("ThrowP1") == 1) && (parent.CompareTag("Player1")))
+        {
+            throwAura.Play();
+            return;
+        }
+
+        if ((Input.GetAxisRaw("ThrowP2") == 1) && (parent.CompareTag("Player2")))
+        {
+            throwAura.Play();
+            return;
+        }
+
         slingAura.Stop();
         jumpAura.Stop();
+        throwAura.Stop();
     }
 }
