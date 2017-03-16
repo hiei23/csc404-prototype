@@ -11,7 +11,8 @@ public class PlayerController3 : MonoBehaviour
     public float gravity = 20.0F;
     public float maxSpeed = 20.0F;
     public bool isClimbing;
-	public float throwspeed = 5.0F;
+	public float throwspeed = 2.0F;
+	public float slingheight = 25.0F;
     private Vector3 moveDirection = Vector3.zero;
     private CharacterController controller;
     private Rigidbody rb;
@@ -73,6 +74,7 @@ public class PlayerController3 : MonoBehaviour
             h = delta.x == 0 ? 0 : (delta.x > 0 ? 1 : -1);
             v = delta.y == 0 ? 0 : (delta.y > 0 ? 1 : -1);
             d = delta.z == 0 ? 0 : (delta.z > 0 ? 1 : -1);
+			//moveDirection = new Vector3.MoveTowards(transform.position, otherPlayer.transform.position.y+throwspeed, speed*Time.deltaTime);
             moveDirection = new Vector3(h, d+throwspeed, v);
             moveDirection *= speed;
 			rb.isKinematic = true;
@@ -98,8 +100,8 @@ public class PlayerController3 : MonoBehaviour
 		
 		if ((gameObject.tag.Equals("Player1") && Input.GetButtonUp("GroundP1")) && CheckGround())
 		{
-            moveDirection = new Vector3(0, 10.0f, 0);
-			timer = 0;
+			rb.velocity = new Vector3(0, 25, 0);
+            moveDirection = rb.velocity;
 		}
 		
         else
