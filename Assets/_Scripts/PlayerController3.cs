@@ -11,10 +11,12 @@ public class PlayerController3 : MonoBehaviour
     public float gravity = 20.0F;
     public float maxSpeed = 20.0F;
     public bool isClimbing;
+	public float throwspeed = 5.0F;
     private Vector3 moveDirection = Vector3.zero;
     private CharacterController controller;
     private Rigidbody rb;
 	private Rigidbody rb2;
+	private int timer;
 
     void Awake()
     {
@@ -71,9 +73,10 @@ public class PlayerController3 : MonoBehaviour
             h = delta.x == 0 ? 0 : (delta.x > 0 ? 1 : -1);
             v = delta.y == 0 ? 0 : (delta.y > 0 ? 1 : -1);
             d = delta.z == 0 ? 0 : (delta.z > 0 ? 1 : -1);
-            moveDirection = new Vector3(h, d+10, v);
+            moveDirection = new Vector3(h, d+throwspeed, v);
             moveDirection *= speed;
 			rb.isKinematic = true;
+			timer = 0;
         }
 		
         if (isClimbing)
@@ -93,10 +96,11 @@ public class PlayerController3 : MonoBehaviour
             transform.Translate(moveDirection * Time.deltaTime);
         }
 		
-		/*if ((gameObject.tag.Equals("Player1") && Input.GetButtonUp("GroundP1")))
+		if ((gameObject.tag.Equals("Player1") && Input.GetButtonUp("GroundP1")) && CheckGround())
 		{
-            moveDirection = new Vector3(0, 10, 0);
-		}*/
+            moveDirection = new Vector3(0, 10.0f, 0);
+			timer = 0;
+		}
 		
         else
         {
@@ -109,6 +113,12 @@ public class PlayerController3 : MonoBehaviour
 				if (((gameObject.tag.Equals("Player1") && Input.GetButton("ThrowP1")) || (gameObject.tag.Equals("Player2") && Input.GetButton("ThrowP2"))) && CheckGround())
 				{
 					rb2.AddForce(moveDirection * Time.deltaTime * 100);
+				}
+				
+				else if (timer < 30)
+				{
+					transform.Translate(moveDirection * Time.deltaTime);
+					timer++;
 				}
 				
 				else
