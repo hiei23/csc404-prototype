@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraMove2 : MonoBehaviour
-{
+public class CameraMove21 : MonoBehaviour {
 
     //public GameObject player1;
 

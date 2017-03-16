@@ -2,7 +2,7 @@
 using UnityEngine;
 
 
-public class PlayerController3 : MonoBehaviour
+public class PlayerController31 : MonoBehaviour
 {
 	public GameObject otherPlayer;
     public float speed = 10.0F;
@@ -13,7 +13,6 @@ public class PlayerController3 : MonoBehaviour
     public bool isClimbing;
 	public float throwspeed = 2.0F;
 	public float slingheight = 25.0F;
-    public float RotateSpeed = 30f;
     private Vector3 moveDirection = Vector3.zero;
     private CharacterController controller;
     private Rigidbody rb;
@@ -57,14 +56,6 @@ public class PlayerController3 : MonoBehaviour
         moveDirection = Camera.main.transform.TransformDirection(moveDirection);
         moveDirection.y = 0;
         moveDirection *= speed;
-
-        //////////////////////////////////////////////////
-
-        Vector3 epsilon = Vector3.up * Input.GetAxis("Axis4P1");
-        transform.Rotate(epsilon * RotateSpeed * Time.deltaTime);
-
-        /////////////////////////////////////////////
-
         if (((gameObject.tag.Equals("Player1") && Input.GetButton("JumpP1")) || (gameObject.tag.Equals("Player2") && Input.GetButton("JumpP2"))) && CheckGround())
             rb.AddForce(new Vector3(0, jumpSpeed, 0), ForceMode.Impulse);
         /*if (((gameObject.tag.Equals("Player1") && Input.GetButton("ReturnP1")) || (gameObject.tag.Equals("Player2") && Input.GetButton("ReturnP2"))))
