@@ -19,13 +19,13 @@ public class PlayerController3 : MonoBehaviour
     private Rigidbody rb;
 	private Rigidbody rb2;
 	private int timer;
+	private bool slingState = false;
 
     void Awake()
     {
         //controller = GetComponent<CharacterController>();
         rb = GetComponent<Rigidbody>();
 		rb2 = otherPlayer.GetComponent<Rigidbody>();
-		//rb2 = otherPlayer.GetComponent<Rigidbody>();
         isClimbing = false;
         rb.isKinematic = false;
 
@@ -69,8 +69,13 @@ public class PlayerController3 : MonoBehaviour
 
         /////////////////////////////////////////////
 
-        if (((gameObject.tag.Equals("Player1") && Input.GetButton("JumpP1")) || (gameObject.tag.Equals("Player2") && Input.GetButton("JumpP2"))) && CheckGround())
-            rb.AddForce(new Vector3(0, jumpSpeed, 0), ForceMode.Impulse);
+        if (((gameObject.tag.Equals("Player1") && Input.GetButtonDown("JumpP1")) || (gameObject.tag.Equals("Player2") && Input.GetButtonDown("JumpP2"))) && CheckGround())
+		{
+			//rb.AddForce(new Vector3(0, jumpSpeed, 0), ForceMode.Impulse);
+			rb.velocity = rb.velocity + new Vector3(0, jumpSpeed, 0);
+            moveDirection = rb.velocity;
+		}
+		
         /*if (((gameObject.tag.Equals("Player1") && Input.GetButton("ReturnP1")) || (gameObject.tag.Equals("Player2") && Input.GetButton("ReturnP2"))))
         {
             delta = other.transform.position - transform.position;
@@ -83,7 +88,7 @@ public class PlayerController3 : MonoBehaviour
 		
 		if (((gameObject.tag.Equals("Player1") && Input.GetButton("ThrowP1")) || (gameObject.tag.Equals("Player2") && Input.GetButton("ThrowP2"))) && CheckGround())
         {
-            delta = otherPlayer.transform.position - transform.position;
+            delta = rb.position - rb2.position;
             h = delta.x == 0 ? 0 : (delta.x > 0 ? 1 : -1);
             v = delta.y == 0 ? 0 : (delta.y > 0 ? 1 : -1);
             d = delta.z == 0 ? 0 : (delta.z > 0 ? 1 : -1);
@@ -101,7 +106,7 @@ public class PlayerController3 : MonoBehaviour
         }
 
 
-        if (((gameObject.tag.Equals("Player1") && Input.GetButton("GroundP1")) || (gameObject.tag.Equals("Player2") && Input.GetButton("GroundP2"))) && CheckGround())
+        if (((gameObject.tag.Equals("Player1") && Input.GetButton("GroundP1")) || (gameObject.tag.Equals("Player2") && Input.GetButton("GroundP2"))) && CheckGround() && !slingState)
         {
             moveDirection = new Vector3(h, d, v);
             moveDirection *= speed / 4;
@@ -111,10 +116,19 @@ public class PlayerController3 : MonoBehaviour
             transform.Translate(moveDirection * Time.deltaTime);
         }
 		
-		if ((gameObject.tag.Equals("Player1") && Input.GetButtonUp("GroundP1")) && CheckGround())
+		if (((gameObject.tag.Equals("Player1") && Input.GetButtonUp("GroundP1")) || (gameObject.tag.Equals("Player2") && Input.GetButtonUp("GroundP2"))) && CheckGround())
 		{
 			rb.velocity = new Vector3(0, 25, 0);
             moveDirection = rb.velocity;
+			slingState = true;
+			Debug.Log(slingState);
+		}
+		
+		//can't get this to work atm
+		if (slingState && CheckGround() && (!Input.GetButton("GroundP1") || !Input.GetButton("GroundP1")))
+		{
+			slingState = false;
+			Debug.Log(slingState);
 		}
 		
         else
@@ -130,10 +144,14 @@ public class PlayerController3 : MonoBehaviour
 					rb2.AddForce(moveDirection * Time.deltaTime * 100);
 				}
 				
-				else if (timer < 30)
+				//can't seem to get this to work atm
+				else if (slingState && (Vector3.Distance(rb.position, rb2.position) <= 20))
 				{
-					transform.Translate(moveDirection * Time.deltaTime);
-					timer++;
+					float distance = Vector3.Distance(rb.position, rb2.position);
+					rb2.isKinematic = false;
+					Debug.Log(slingState);
+					Debug.Log(rb2.isKinematic);
+					Debug.Log(distance);
 				}
 				
 				else
