@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 114299002903101158}
   - component: {fileID: 54530065731486636}
   - component: {fileID: 64131254137422234}
+  - component: {fileID: 114382315898126032}
   m_Layer: 0
   m_Name: Vase2
   m_TagString: Untagged
@@ -124,3 +125,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pieces: {fileID: 1200576539898604, guid: 7b8d31ef1c228594bae56ccd35fe7c9e, type: 2}
   force: 7
+--- !u!114 &114382315898126032
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1887922574335268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8f606494474f9641a6813ae29e69b38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minCost: 0
+  maxCost: 0
+  isfish: 0
+  fishProb: 0

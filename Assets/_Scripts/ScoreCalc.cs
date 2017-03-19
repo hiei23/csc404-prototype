@@ -32,7 +32,7 @@ public class ScoreCalc : MonoBehaviour {
         {
             // you broke and found fish so add up the count
             int curCount = getCount(numSnack.text);
-            curCount++;
+            curCount--;
             numSnack.text = SetCountText(curCount);
         }
     }

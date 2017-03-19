@@ -17,7 +17,7 @@ public class SnackEater : MonoBehaviour {
 	void Update () {
 
     }
-
+    /*
     void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.CompareTag("Snack"))
@@ -29,7 +29,7 @@ public class SnackEater : MonoBehaviour {
             SetCountText(current_counter);
 
         }
-    }
+    }*/
 
     int getCounter(string text)
     {
