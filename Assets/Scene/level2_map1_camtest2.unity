@@ -19186,8 +19186,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minCost: 50
   maxCost: 1100
-  isfish: 0
-  fishProb: 0
 --- !u!1 &547004807
 GameObject:
   m_ObjectHideFlags: 0
@@ -22422,8 +22420,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minCost: 100
   maxCost: 500
-  isfish: 0
-  fishProb: 0
 --- !u!1 &655296491
 GameObject:
   m_ObjectHideFlags: 0
