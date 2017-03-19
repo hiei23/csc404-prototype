@@ -1,9 +1,13 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SnackEater : MonoBehaviour {
 
-    public UnityEngine.UI.Text countSnack;
+    public Text countSnack;
+
+    public Text numSnack;
+
     // Use this for initialization
     void Start () {
 		
@@ -20,9 +24,10 @@ public class SnackEater : MonoBehaviour {
         {
             //other.gameObject.SetActive(false);
             Debug.Log("Snack!\n");
-            int current_counter = getCounter(countSnack.text);
+            int current_counter = getCounter(countSnack.text);            
             current_counter--;
             SetCountText(current_counter);
+
         }
     }
 
