@@ -12,31 +12,24 @@ public class CameraMove2 : MonoBehaviour
     public float runDistance;
     public float height;
 
-    public float RotateSpeed = 4.0f;
-
-    //public float xSpeed = 250.0F;
-    //public float ySpeed = 120.0F;
-
     private Transform cameraTransform;
-    //private float x;
-    //private float y;
-
-
-    //private Vector3 offset;
+    private Vector3 offset;
 
     // Use this for initialization
     void Start()
     {
-        //offset = transform.position - player1.transform.position;
         cameraTransform = transform;
+        offset = transform.position - target.transform.position;
     }
 
     void LateUpdate()
     {
-        //transform.position = player1.transform.position + offset;
+        /* angle #1 - cats are close to the bottom of game play screen */
+        //transform.position = target.transform.position + offset;
+
+        /* angle #2 - cats are more center of the game play screen */
         cameraTransform.position = new Vector3(target.position.x, target.position.y + height, target.position.z - walkDistance);
         cameraTransform.LookAt(target);
-
 
     }
 
