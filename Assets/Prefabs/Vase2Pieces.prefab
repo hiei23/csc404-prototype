@@ -78,6 +78,7 @@ GameObject:
   - component: {fileID: 4734120029020252}
   - component: {fileID: 95813731664072398}
   - component: {fileID: 82666523736784282}
+  - component: {fileID: 114314336835572650}
   m_Layer: 0
   m_Name: Vase2Pieces
   m_TagString: Untagged
@@ -1138,3 +1139,14 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114314336835572650
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1200576539898604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 159ec4ac5559ce14bbb82e83e97b18f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

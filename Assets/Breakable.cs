@@ -20,7 +20,7 @@ public class Breakable : MonoBehaviour {
             {
                 Vector3 v = gameObject.GetComponent<Rigidbody>().velocity;
                 GameObject p = Instantiate(pieces, transform.position, transform.rotation);
-                p.GetComponent<PiecesFlying>().SendFlying(v);
+                p.GetComponent<SendPiecesFlying>().SendFlying(v);
                 gameObject.SetActive(false);
             }
         }
