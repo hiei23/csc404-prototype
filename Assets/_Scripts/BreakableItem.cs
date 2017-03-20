@@ -4,31 +4,21 @@ using UnityEngine;
 
 public class BreakableItem : MonoBehaviour {
 
-    public int minCost;
-    public int maxCost;
-
-    public bool isfish = false;
-
+    public int minCost = 0;
+    public int maxCost = 0;
     private int cost;
-    
-
-    public float fishProb;
 
 	// Use this for initialization
 	void Start () {
 
 		// generate cost of this item/furniture
-        if(minCost != null && maxCost != null)
+        if(minCost != 0 && maxCost != 0)
         {
             cost = Random.Range(minCost, maxCost);
         }else
         {// if min cost and max cost not specified
             cost = Random.Range(99, 999);
         }
-
-        // generate fish inside this item (may not contain one
-
-
 
 	}
 	
@@ -42,8 +32,5 @@ public class BreakableItem : MonoBehaviour {
         return cost;
     }
 
-    public bool isFishHere()
-    {
-        return isfish;
-    }
+
 }
