@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.43748686, g: 0.48530775, b: 0.5655831, a: 1}
+  m_IndirectSpecularColor: {r: 0.4374868, g: 0.48530757, b: 0.5655823, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -2658,11 +2658,11 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2003994093}
-  - {fileID: 268124654}
-  - {fileID: 186940739}
   - {fileID: 445018334}
   - {fileID: 1733551179}
   - {fileID: 1353354798}
+  - {fileID: 268124654}
+  - {fileID: 186940739}
   m_Father: {fileID: 178481130}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7762,6 +7762,38 @@ Prefab:
         type: 2}
       propertyPath: InitialModule.startLifetime.minCurve.m_Curve.Array.data[0].value
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4039488289714530, guid: 82822255e4162d544927f8180087a808, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 141.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4039488289714530, guid: 82822255e4162d544927f8180087a808, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -115.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 145137229377321524, guid: 82822255e4162d544927f8180087a808,
+        type: 2}
+      propertyPath: m_ConnectedAnchor.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 145137229377321524, guid: 82822255e4162d544927f8180087a808,
+        type: 2}
+      propertyPath: m_ConnectedAnchor.z
+      value: 0.125
+      objectReference: {fileID: 0}
+    - target: {fileID: 145171092054921992, guid: 82822255e4162d544927f8180087a808,
+        type: 2}
+      propertyPath: m_ConnectedAnchor.x
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 145171092054921992, guid: 82822255e4162d544927f8180087a808,
+        type: 2}
+      propertyPath: m_ConnectedAnchor.z
+      value: -0.125
+      objectReference: {fileID: 0}
+    - target: {fileID: 4039488289714530, guid: 82822255e4162d544927f8180087a808, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 3.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 82822255e4162d544927f8180087a808, type: 2}
