@@ -397,12 +397,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 499ad2e4d9cdb2c43b8d21d3e72a3254, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  otherPlayer: {fileID: 1110695876}
   speed: 20
   climbSpeed: 10
   jumpSpeed: 1.5
   gravity: 10
   maxSpeed: 20
   isClimbing: 0
+  throwspeed: 2
+  slingheight: 25
+  RotateSpeed: 30
 --- !u!114 &46173518
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -518,7 +522,7 @@ Transform:
   m_LocalPosition: {x: -19.77, y: 3.3, z: 4.71}
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children:
-  - {fileID: 1795411788}
+  - {fileID: 404309650}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -968,12 +972,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 499ad2e4d9cdb2c43b8d21d3e72a3254, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  otherPlayer: {fileID: 0}
   speed: 10
   climbSpeed: 10
   jumpSpeed: 0.5
   gravity: 10
   maxSpeed: 20
   isClimbing: 0
+  throwspeed: 2
+  slingheight: 25
+  RotateSpeed: 30
 --- !u!54 &174271583
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2085,6 +2093,36 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 392141765}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &404309649
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 1938928718}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 404309650}
+  m_Layer: 0
+  m_Name: Missing Prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &404309650
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 1938928718}
+  m_GameObject: {fileID: 404309649}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1795411790}
+  - {fileID: 1795411788}
+  m_Father: {fileID: 46173524}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &420327459
 GameObject:
   m_ObjectHideFlags: 0
@@ -3716,12 +3754,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 499ad2e4d9cdb2c43b8d21d3e72a3254, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  otherPlayer: {fileID: 0}
   speed: 10
   climbSpeed: 10
   jumpSpeed: 0.5
   gravity: 10
   maxSpeed: 20
   isClimbing: 0
+  throwspeed: 2
+  slingheight: 25
+  RotateSpeed: 30
 --- !u!1 &812035506
 GameObject:
   m_ObjectHideFlags: 0
@@ -5154,6 +5196,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1035519362}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1039572924
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 1526769165}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1788337580}
+  m_Layer: 0
+  m_Name: Missing Prefab (Dummy)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1047697128
 GameObject:
   m_ObjectHideFlags: 0
@@ -5283,12 +5340,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 499ad2e4d9cdb2c43b8d21d3e72a3254, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  otherPlayer: {fileID: 0}
   speed: 10
   climbSpeed: 10
   jumpSpeed: 0.5
   gravity: 10
   maxSpeed: 20
   isClimbing: 0
+  throwspeed: 2
+  slingheight: 25
+  RotateSpeed: 30
 --- !u!114 &1052262640
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5748,7 +5809,7 @@ Transform:
   m_LocalPosition: {x: -13.1, y: 3.3, z: -0.65}
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children:
-  - {fileID: 1788337580}
+  - {fileID: 1754588199}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5798,12 +5859,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 499ad2e4d9cdb2c43b8d21d3e72a3254, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  otherPlayer: {fileID: 46173516}
   speed: 20
   climbSpeed: 10
   jumpSpeed: 1.5
   gravity: 10
   maxSpeed: 20
   isClimbing: 0
+  throwspeed: 2
+  slingheight: 25
+  RotateSpeed: 30
 --- !u!23 &1110695881
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6968,12 +7033,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 499ad2e4d9cdb2c43b8d21d3e72a3254, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  otherPlayer: {fileID: 0}
   speed: 10
   climbSpeed: 10
   jumpSpeed: 0.5
   gravity: 10
   maxSpeed: 20
   isClimbing: 0
+  throwspeed: 2
+  slingheight: 25
+  RotateSpeed: 30
 --- !u!114 &1337458717
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8941,6 +9010,36 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 08333d409ac275940868c0d69f2b5884, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1754588198
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 1526769165}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1754588199}
+  m_Layer: 0
+  m_Name: Missing Prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1754588199
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 1526769165}
+  m_GameObject: {fileID: 1754588198}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1788337582}
+  - {fileID: 1788337580}
+  m_Father: {fileID: 1110695877}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1757995175
 GameObject:
   m_ObjectHideFlags: 0
@@ -9133,16 +9232,37 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1785694515}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1788337579 stripped
+--- !u!1 &1788337579
 GameObject:
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 1838907316301330, guid: 3a3f400dcdb17c24baa4fb8b1f02315a,
     type: 2}
   m_PrefabInternal: {fileID: 1526769165}
---- !u!4 &1788337580 stripped
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1788337582}
+  - component: {fileID: 1788337581}
+  m_Layer: 0
+  m_Name: Missing Prefab (Dummy)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1788337580
 Transform:
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 4507958664542706, guid: 3a3f400dcdb17c24baa4fb8b1f02315a,
     type: 2}
   m_PrefabInternal: {fileID: 1526769165}
+  m_GameObject: {fileID: 1039572924}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1754588199}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1788337581
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9154,16 +9274,50 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea15d998a5be0e140bac4ee14af2fc3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1795411787 stripped
+--- !u!4 &1788337582
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 1526769165}
+  m_GameObject: {fileID: 1788337579}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1754588199}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1795411787
 GameObject:
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 1838907316301330, guid: 3a3f400dcdb17c24baa4fb8b1f02315a,
     type: 2}
   m_PrefabInternal: {fileID: 1938928718}
---- !u!4 &1795411788 stripped
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1795411790}
+  - component: {fileID: 1795411789}
+  m_Layer: 0
+  m_Name: Missing Prefab (Dummy)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1795411788
 Transform:
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 4507958664542706, guid: 3a3f400dcdb17c24baa4fb8b1f02315a,
     type: 2}
   m_PrefabInternal: {fileID: 1938928718}
+  m_GameObject: {fileID: 2106331639}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 404309650}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1795411789
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9175,6 +9329,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea15d998a5be0e140bac4ee14af2fc3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &1795411790
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 1938928718}
+  m_GameObject: {fileID: 1795411787}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 404309650}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1809003559
 GameObject:
   m_ObjectHideFlags: 0
@@ -10968,6 +11135,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2103643305}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &2106331639
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 1938928718}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1795411788}
+  m_Layer: 0
+  m_Name: Missing Prefab (Dummy)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &2122271320
 GameObject:
   m_ObjectHideFlags: 0
