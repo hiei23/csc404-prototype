@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PiecesFlying : MonoBehaviour {
+public class FlyingPieces : MonoBehaviour {
 
     private Rigidbody prb;
 
