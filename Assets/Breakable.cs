@@ -9,6 +9,7 @@ public class Breakable : MonoBehaviour {
 
     private Rigidbody rb;
 
+
     void OnCollisionEnter(Collision collision){
         rb = collision.gameObject.GetComponent<Rigidbody>();
         Debug.Log("snack collision");
@@ -17,7 +18,9 @@ public class Breakable : MonoBehaviour {
                 (collision.gameObject.tag == "Player1" ||
                  collision.gameObject.tag == "Player2"))
             {
-                Instantiate(pieces, transform.position, transform.rotation);
+                Vector3 v = gameObject.GetComponent<Rigidbody>().velocity;
+                GameObject p = Instantiate(pieces, transform.position, transform.rotation);
+                p.GetComponent<PiecesFlying>().SendFlying(v);
                 gameObject.SetActive(false);
             }
         }
