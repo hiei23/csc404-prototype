@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.43748677, g: 0.4853075, b: 0.56558245, a: 1}
+  m_IndirectSpecularColor: {r: 0.43748686, g: 0.48530775, b: 0.5655831, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -7353,7 +7353,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rm1_wall_north: {fileID: 879131193}
-  rm1_furnitures: {fileID: 0}
+  rm1_furnitures: {fileID: 135514833}
 --- !u!1001 &795211762
 Prefab:
   m_ObjectHideFlags: 0
