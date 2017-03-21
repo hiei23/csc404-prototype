@@ -8,18 +8,22 @@ public class Breakable : MonoBehaviour {
     public float force;
 
     private Rigidbody rb;
+    private Rigidbody other_rb;
 
 
     void OnCollisionEnter(Collision collision){
-        rb = collision.gameObject.GetComponent<Rigidbody>();
+        rb = gameObject.GetComponent<Rigidbody>();
+        other_rb = collision.gameObject.GetComponent<Rigidbody>();
         Debug.Log("snack collision");
         if (rb) {
-            if (rb.velocity.magnitude > force &&
+            if ((rb.velocity.magnitude > force || 
+                other_rb.velocity.magnitude > force) &&
                 (collision.gameObject.tag == "Player1" ||
                  collision.gameObject.tag == "Player2"))
             {
-                Vector3 v = gameObject.GetComponent<Rigidbody>().velocity;
+                Vector3 v = rb.velocity;
                 GameObject p = Instantiate(pieces, transform.position, transform.rotation);
+                p.transform.localScale = transform.localScale;
                 p.GetComponent<SendPiecesFlying>().SendFlying(v);
                 gameObject.SetActive(false);
             }
