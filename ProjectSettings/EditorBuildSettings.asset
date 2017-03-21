@@ -11,3 +11,5 @@ EditorBuildSettings:
     path: Assets/scene/level1_test_map.unity
   - enabled: 1
     path: Assets/Scene/level2_map1.unity
+  - enabled: 1
+    path: Assets/Scene/end_scene.unity
