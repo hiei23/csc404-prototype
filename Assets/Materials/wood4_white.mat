@@ -9,6 +9,7 @@ Material:
   m_Name: wood4_white
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: _EMISSION _GLOSSYREFLECTIONS_OFF _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A
+    _SPECULARHIGHLIGHTS_OFF
   m_LightmapFlags: 1
   m_CustomRenderQueue: -1
   stringTagMap: {}
@@ -84,7 +85,7 @@ Material:
       second: 0
     - first:
         name: _GlossMapScale
-      second: 1
+      second: 0.06
     - first:
         name: _Glossiness
       second: 0
@@ -93,7 +94,7 @@ Material:
       second: 0
     - first:
         name: _Metallic
-      second: 0
+      second: 0.07
     - first:
         name: _Mode
       second: 0
@@ -108,7 +109,7 @@ Material:
       second: 1
     - first:
         name: _SpecularHighlights
-      second: 1
+      second: 0
     - first:
         name: _SrcBlend
       second: 1
