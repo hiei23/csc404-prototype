@@ -5,9 +5,9 @@ using UnityEngine;
 public class KitchenFloor : MonoBehaviour {
 
 
-    //public GameObject rm3_wall_south;
+
     public GameObject rm1_wall_north;
-    //public Renderer wall;
+    public GameObject rm1_furnitures;
 
     bool isInKitchen;
 
@@ -30,6 +30,7 @@ public class KitchenFloor : MonoBehaviour {
         {
             Debug.Log("there should be no wall");
             rm1_wall_north.SetActive(false);
+            rm1_furnitures.SetActive(false);
         }
     }
 
@@ -37,6 +38,7 @@ public class KitchenFloor : MonoBehaviour {
     {
         Debug.Log("no one in Kitchen!!");
         rm1_wall_north.SetActive(true);
+        rm1_furnitures.SetActive(true);
 
     }
 }
