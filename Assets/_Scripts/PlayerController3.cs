@@ -8,7 +8,6 @@ public class PlayerController3 : MonoBehaviour
     public float speed = 10.0F;
     public float climbSpeed = 10.0F;
     public float jumpSpeed = 10.0F;
-    public float gravity = 20.0F;
     public float maxSpeed = 20.0F;
     public bool isClimbing;
 	public float throwspeed = 2.0F;
@@ -28,7 +27,6 @@ public class PlayerController3 : MonoBehaviour
 		rb2 = otherPlayer.GetComponent<Rigidbody>();
         isClimbing = false;
         rb.isKinematic = false;
-
     }
 
 
@@ -52,8 +50,6 @@ public class PlayerController3 : MonoBehaviour
             v = Input.GetAxisRaw("VerticalP2");
             other = GameObject.FindWithTag("Player1");
         }
-
-
       
         moveDirection = new Vector3(h, d, v);
         moveDirection = Camera.main.transform.TransformDirection(moveDirection);
@@ -76,8 +72,8 @@ public class PlayerController3 : MonoBehaviour
         if (((gameObject.tag.Equals("Player1") && Input.GetButtonDown("JumpP1")) || (gameObject.tag.Equals("Player2") && Input.GetButtonDown("JumpP2"))) && CheckGround())
 		{
 			//rb.AddForce(new Vector3(0, jumpSpeed, 0), ForceMode.Impulse);
-			rb.velocity = rb.velocity + new Vector3(0, jumpSpeed, 0);
-            moveDirection = rb.velocity;
+			//rb.velocity = rb.velocity + new Vector3(0, jumpSpeed, 0);
+            moveDirection = new Vector3(0, jumpSpeed * 100, 0);
 		}
 		
         /*if (((gameObject.tag.Equals("Player1") && Input.GetButton("ReturnP1")) || (gameObject.tag.Equals("Player2") && Input.GetButton("ReturnP2"))))
