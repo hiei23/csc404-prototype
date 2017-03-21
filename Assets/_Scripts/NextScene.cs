@@ -13,8 +13,8 @@ public class NextScene : MonoBehaviour {
     // Use this for initialization
     void Start () {
         AudioSource[] sources = FindObjectsOfType<AudioSource>();
-        background_music = sources[1];
-        start_button_sound = sources[0];
+        background_music = sources[0];
+        start_button_sound = sources[1];
         start_button_sound.Stop();
     }
 	

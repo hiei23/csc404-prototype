@@ -12,8 +12,8 @@ public class PlayerSound : MonoBehaviour {
 	void Start () {
 
         AudioSource[] sources = FindObjectsOfType<AudioSource>();
-        jump1 = sources[1];
-        jump2 = sources[2];
+        jump1 = sources[0];
+        jump2 = sources[1];
         jump1.Stop();
         jump2.Stop();
         jump1Time = MAX_PLAY_TIME;

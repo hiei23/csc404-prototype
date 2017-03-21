@@ -53,10 +53,13 @@ public class PlayerController3 : MonoBehaviour
             other = GameObject.FindWithTag("Player1");
         }
 
+
+      
         moveDirection = new Vector3(h, d, v);
         moveDirection = Camera.main.transform.TransformDirection(moveDirection);
         moveDirection.y = 0;
         moveDirection *= speed;
+        
 
         //////////////////////////////////////////////////
 
@@ -65,7 +68,8 @@ public class PlayerController3 : MonoBehaviour
         //if (Input.GetAxisRaw("Axis4P2") > Input.GetAxisRaw("Axis4P1"))
         //    epsilon = Vector3.up * Input.GetAxisRaw("Axis4P2");
 
-        transform.Rotate(epsilon * RotateSpeed * Time.deltaTime);
+        //this line made the cats rotate endlessly!!
+        //transform.Rotate(epsilon * RotateSpeed * Time.deltaTime);
 
         /////////////////////////////////////////////
 
