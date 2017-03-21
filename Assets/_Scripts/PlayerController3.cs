@@ -166,16 +166,16 @@ public class PlayerController3 : MonoBehaviour
         }
 		
 		
-        /*
+        
         if (moveDirection != Vector3.zero && moveDirection.y == 0)
         {
             Quaternion targetRotation = Quaternion.LookRotation(moveDirection, Vector3.up);
-            float rotationSpeed = 100.0f;
+            float rotationSpeed = 50.0f;
             Quaternion newRotation = Quaternion.Lerp(rb.rotation, targetRotation, rotationSpeed * Time.deltaTime);
                  
             //Apply the rotation
             rb.MoveRotation(newRotation);
-        }*/
+        }
     }
 
     void OnCollisionEnter(Collision other)
