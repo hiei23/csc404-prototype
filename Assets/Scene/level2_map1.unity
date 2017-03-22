@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.43748686, g: 0.48530775, b: 0.5655831, a: 1}
+  m_IndirectSpecularColor: {r: 0.43748677, g: 0.4853075, b: 0.56558245, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -3930,6 +3930,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   otherPlayer: {fileID: 1640154235}
+  model: {fileID: 100010, guid: 40b5d3a797e7045479ef556502d37114, type: 3}
   speed: 20
   climbSpeed: 10
   jumpSpeed: 5
@@ -15080,6 +15081,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   otherPlayer: {fileID: 440966087}
+  model: {fileID: 100010, guid: 40b5d3a797e7045479ef556502d37114, type: 3}
   speed: 20
   climbSpeed: 10
   jumpSpeed: 1.5
