@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerController3 : MonoBehaviour
 {
 	public GameObject otherPlayer;
+    public GameObject model;
     public float speed = 10.0F;
     public float climbSpeed = 10.0F;
     public float jumpSpeed = 10.0F;
@@ -19,6 +20,7 @@ public class PlayerController3 : MonoBehaviour
 	private Rigidbody rb2;
 	private int timer;
 	private bool slingState = false;
+    private Animator animator;
 
     void Awake()
     {
@@ -27,6 +29,7 @@ public class PlayerController3 : MonoBehaviour
 		rb2 = otherPlayer.GetComponent<Rigidbody>();
         isClimbing = false;
         rb.isKinematic = false;
+        animator = model.GetComponent<Animator>();
     }
 
 
@@ -161,8 +164,16 @@ public class PlayerController3 : MonoBehaviour
             }
         }
 		
-		
-        
+		if (moveDirection == Vector3.zero) {
+            animator.SetInteger("State", 0);
+            Debug.Log("idle");
+        }
+        else {
+            animator.SetInteger("State", 1);
+            Debug.Log("move");
+        }
+            
+
         if (moveDirection != Vector3.zero && moveDirection.y == 0)
         {
             Quaternion targetRotation = Quaternion.LookRotation(moveDirection, Vector3.up);
