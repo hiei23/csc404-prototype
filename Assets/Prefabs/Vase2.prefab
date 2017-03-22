@@ -124,7 +124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pieces: {fileID: 1200576539898604, guid: 7b8d31ef1c228594bae56ccd35fe7c9e, type: 2}
-  force: 7
+  force: 5
 --- !u!114 &114382315898126032
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -138,5 +138,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minCost: 0
   maxCost: 0
-  isfish: 0
-  fishProb: 0

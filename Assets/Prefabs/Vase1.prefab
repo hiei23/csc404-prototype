@@ -157,7 +157,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pieces: {fileID: 1917041315626984, guid: 9952acb0bcb248d47abfbf0785d4aeb2, type: 2}
-  force: 7
+  force: 5
 --- !u!114 &114727241190155060
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -171,8 +171,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minCost: 0
   maxCost: 0
-  isfish: 0
-  fishProb: 0
 --- !u!135 &135410027484478180
 SphereCollider:
   m_ObjectHideFlags: 1

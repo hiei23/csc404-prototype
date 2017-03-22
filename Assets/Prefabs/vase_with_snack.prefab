@@ -803,7 +803,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pieces: {fileID: 1917041315626984, guid: 9952acb0bcb248d47abfbf0785d4aeb2, type: 2}
-  force: 7
+  force: 5
 --- !u!135 &135828100048519890
 SphereCollider:
   m_ObjectHideFlags: 1

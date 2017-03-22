@@ -237,4 +237,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pieces: {fileID: 1368239330232920, guid: 2943160dedeb30b4aac2675fd028bb43, type: 2}
-  force: 15
+  force: 5
