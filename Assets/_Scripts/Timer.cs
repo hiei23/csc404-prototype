@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour {
 
@@ -26,6 +27,6 @@ public class Timer : MonoBehaviour {
 
     void timeEnd()
     {
-
+        SceneManager.LoadScene("end_scene", LoadSceneMode.Single);
     }
 }
