@@ -8,7 +8,7 @@ public class PlayerController3 : MonoBehaviour
     public GameObject model;
     public float speed = 10.0F;
     public float climbSpeed = 10.0F;
-    public float jumpSpeed = 10.0F;
+    public float jumpSpeed = 3.0F;
     public float maxSpeed = 20.0F;
     public bool isClimbing;
 	public float throwspeed = 2.0F;
