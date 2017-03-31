@@ -11,15 +11,18 @@ public class PlayerController3 : MonoBehaviour
     public float jumpSpeed = 3.0F;
     public float maxSpeed = 20.0F;
     public bool isClimbing;
-	public float throwspeed = 2.0F;
-	public float slingheight = 25.0F;
+	//public float throwspeed = 2.0F;
+	//public float slingheight = 25.0F;
     public float RotateSpeed = 30f;
+	public float pounceHeight = 25.0F;
+	public float pounceSpeed = 20.0F;
     private Vector3 moveDirection = Vector3.zero;
     private CharacterController controller;
     private Rigidbody rb;
 	private Rigidbody rb2;
-	private int timer;
-	private bool slingState = false;
+	//private int timer;
+	//private bool slingState = false;
+	private bool pounceState;
     private Animator animator;
 
     void Awake()
@@ -89,7 +92,7 @@ public class PlayerController3 : MonoBehaviour
             moveDirection *= speed;
         }*/
 		
-		if (((gameObject.tag.Equals("Player1") && Input.GetButton("ThrowP1")) || (gameObject.tag.Equals("Player2") && Input.GetButton("ThrowP2"))) && CheckGround())
+		/*if (((gameObject.tag.Equals("Player1") && Input.GetButton("ThrowP1")) || (gameObject.tag.Equals("Player2") && Input.GetButton("ThrowP2"))) && CheckGround())
         {
             delta = rb.position - rb2.position;
             h = delta.x == 0 ? 0 : (delta.x > 0 ? 1 : -1);
@@ -100,7 +103,7 @@ public class PlayerController3 : MonoBehaviour
             moveDirection *= speed;
 			rb.isKinematic = true;
 			timer = 0;
-        }
+        }*/
 		
         if (isClimbing)
         {
@@ -109,30 +112,31 @@ public class PlayerController3 : MonoBehaviour
         }
 
 
-        if (((gameObject.tag.Equals("Player1") && Input.GetButton("GroundP1")) || (gameObject.tag.Equals("Player2") && Input.GetButton("GroundP2"))) && CheckGround() && !slingState)
+        if (((gameObject.tag.Equals("Player1") && Input.GetButton("GroundP1")) || (gameObject.tag.Equals("Player2") && Input.GetButton("GroundP2"))) && CheckGround())
         {
             moveDirection = new Vector3(h, d, v);
             moveDirection *= speed / 4;
             moveDirection = Camera.main.transform.TransformDirection(moveDirection);
             moveDirection.y = 0;
-            rb.isKinematic = true;
-            transform.Translate(moveDirection * Time.deltaTime);
+            //rb.isKinematic = true;
+            //transform.Translate(moveDirection * Time.deltaTime);
         }
 		
 		if (((gameObject.tag.Equals("Player1") && Input.GetButtonUp("GroundP1")) || (gameObject.tag.Equals("Player2") && Input.GetButtonUp("GroundP2"))) && CheckGround())
 		{
-			rb.velocity = new Vector3(0, 25, 0);
+			rb.velocity = transform.rotation * new Vector3(0, pounceHeight, pounceSpeed);
             moveDirection = rb.velocity;
-			slingState = true;
-			Debug.Log(slingState);
+			//slingState = true;
+			//Debug.Log(slingState);
+			//transform.Translate(moveDirection * Time.deltaTime);
 		}
 		
 		//can't get this to work atm
-		if (slingState && CheckGround() && (!Input.GetButton("GroundP1") || !Input.GetButton("GroundP1")))
+		/*if (slingState && CheckGround() && (!Input.GetButton("GroundP1") || !Input.GetButton("GroundP1")))
 		{
 			slingState = false;
 			Debug.Log(slingState);
-		}
+		}*/
 		
         else
         {
@@ -142,25 +146,22 @@ public class PlayerController3 : MonoBehaviour
             }
             else
             {
-				if (((gameObject.tag.Equals("Player1") && Input.GetButton("ThrowP1")) || (gameObject.tag.Equals("Player2") && Input.GetButton("ThrowP2"))) && CheckGround())
+				/*if (((gameObject.tag.Equals("Player1") && Input.GetButton("ThrowP1")) || (gameObject.tag.Equals("Player2") && Input.GetButton("ThrowP2"))) && CheckGround())
 				{
 					rb2.AddForce(moveDirection * Time.deltaTime * 100);
-				}
+				}*/
 				
 				//can't seem to get this to work atm
-				else if (slingState && (Vector3.Distance(rb.position, rb2.position) <= 20))
+				/*else if (slingState && (Vector3.Distance(rb.position, rb2.position) <= 20))
 				{
 					float distance = Vector3.Distance(rb.position, rb2.position);
 					rb2.isKinematic = false;
 					Debug.Log(slingState);
 					Debug.Log(rb2.isKinematic);
 					Debug.Log(distance);
-				}
+				}*/
+				rb.AddForce(moveDirection * Time.deltaTime * 100);
 				
-				else
-				{
-					rb.AddForce(moveDirection * Time.deltaTime * 100);
-				}
             }
         }
 		
