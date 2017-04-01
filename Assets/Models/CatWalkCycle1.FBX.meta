@@ -75,7 +75,7 @@ ModelImporter:
     4300006: Box016
     4300008: Box017
     4300010: PantherTransform
-    7400000: Take 001
+    7400000: walk
     9500000: //RootNode
     13700000: Box013
   materials:
@@ -98,7 +98,89 @@ ModelImporter:
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: walk
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 100
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Box013
+        weight: 1
+      - path: Box014
+        weight: 1
+      - path: Box015
+        weight: 1
+      - path: Box016
+        weight: 1
+      - path: Box017
+        weight: 1
+      - path: Panther
+        weight: 1
+      - path: PantherTransform
+        weight: 1
+      - path: PantherTransform/PantherPelvis
+        weight: 1
+      - path: PantherTransform/PantherPelvis/PantherSpine1
+        weight: 1
+      - path: PantherTransform/PantherPelvis/PantherSpine1/PantherSpine2
+        weight: 1
+      - path: PantherTransform/PantherPelvis/PantherSpine1/PantherSpine2/PantherSpine3
+        weight: 1
+      - path: PantherTransform/PantherPelvis/PantherSpine1/PantherSpine2/PantherSpine3/PantherSpine4
+        weight: 1
+      - path: PantherTransform/PantherPelvis/PantherSpine1/PantherSpine2/PantherSpine3/PantherSpine4/PantherSpine5
+        weight: 1
+      - path: PantherTransform/PantherPelvis/PantherSpine1/PantherSpine2/PantherSpine3/PantherSpine4/PantherSpine5/PantherSpine6
+        weight: 1
+      - path: PantherTransform/PantherPelvis/PantherSpine1/PantherSpine2/PantherSpine3/PantherSpine4/PantherSpine5/PantherSpine6/PantherRibcage
+        weight: 1
+      - path: PantherTransform/PantherPelvis/PantherSpine1/PantherSpine2/PantherSpine3/PantherSpine4/PantherSpine5/PantherSpine6/PantherRibcage/PantherNeck1
+        weight: 1
+      - path: PantherTransform/PantherPelvis/PantherSpine1/PantherSpine2/PantherSpine3/PantherSpine4/PantherSpine5/PantherSpine6/PantherRibcage/PantherNeck1/PantherNeck2
+        weight: 1
+      - path: PantherTransform/PantherPelvis/PantherSpine1/PantherSpine2/PantherSpine3/PantherSpine4/PantherSpine5/PantherSpine6/PantherRibcage/PantherNeck1/PantherNeck2/PantherNeck3
+        weight: 1
+      - path: PantherTransform/PantherPelvis/PantherSpine1/PantherSpine2/PantherSpine3/PantherSpine4/PantherSpine5/PantherSpine6/PantherRibcage/PantherNeck1/PantherNeck2/PantherNeck3/PantherHead
+        weight: 1
+      - path: PantherTransform/PantherPelvis/PantherTail1
+        weight: 1
+      - path: PantherTransform/PantherPelvis/PantherTail1/PantherTail2
+        weight: 1
+      - path: PantherTransform/PantherPelvis/PantherTail1/PantherTail2/PantherTail3
+        weight: 1
+      - path: PantherTransform/PantherPelvis/PantherTail1/PantherTail2/PantherTail3/PantherTail4
+        weight: 1
+      - path: PantherTransform/PantherPelvis/PantherTail1/PantherTail2/PantherTail3/PantherTail4/PantherTail5
+        weight: 1
+      - path: PantherTransform/PantherPelvis/PantherTail1/PantherTail2/PantherTail3/PantherTail4/PantherTail5/PantherTail6
+        weight: 1
+      - path: PantherTransform/PantherPelvis/PantherTail1/PantherTail2/PantherTail3/PantherTail4/PantherTail5/PantherTail6/PantherTail7
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []
