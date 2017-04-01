@@ -45,7 +45,7 @@ public class PlayerSound : MonoBehaviour {
             jump1Time -= Time.deltaTime;
         }
 
-        if (Input.GetButton("ThrowP1") || Input.GetButton("ThrowP2"))
+        if (Input.GetButton("GroundP1") || Input.GetButton("GroundP2"))
         {
             if (jump2Time == MAX_PLAY_TIME)
             {

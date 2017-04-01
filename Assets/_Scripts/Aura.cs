@@ -46,13 +46,13 @@ public class Aura : MonoBehaviour
             return;
         }
 
-        if ((Input.GetAxisRaw("ThrowP1") == 1) && (parent.CompareTag("Player1")))
+        if ((Input.GetAxisRaw("GroundP1") == 1) && (parent.CompareTag("Player1")))
         {
             throwAura.Play();
             return;
         }
 
-        if ((Input.GetAxisRaw("ThrowP2") == 1) && (parent.CompareTag("Player2")))
+        if ((Input.GetAxisRaw("GroundP2") == 1) && (parent.CompareTag("Player2")))
         {
             throwAura.Play();
             return;
