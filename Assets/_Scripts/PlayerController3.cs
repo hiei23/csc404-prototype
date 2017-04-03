@@ -24,6 +24,7 @@ public class PlayerController3 : MonoBehaviour
 	//private bool slingState = false;
 	private bool pounceState;
     private Animator animator;
+    private int curr_state;
 
     void Awake()
     {
@@ -33,6 +34,7 @@ public class PlayerController3 : MonoBehaviour
         isClimbing = false;
         rb.isKinematic = false;
         animator = model.GetComponent<Animator>();
+        animator.speed = 0.25f;
     }
 
 
@@ -42,6 +44,8 @@ public class PlayerController3 : MonoBehaviour
         float h = 0.0f;
         float v = 0.0f;
         float d = 0.0f;
+        if (!isClimbing)
+            curr_state = 0;
         Vector3 delta = new Vector3(0, 0, 0);
         GameObject other;
         if (gameObject.tag.Equals("Player1"))
@@ -61,6 +65,9 @@ public class PlayerController3 : MonoBehaviour
         moveDirection = Camera.main.transform.TransformDirection(moveDirection);
         moveDirection.y = 0;
         moveDirection *= speed;
+
+        if (moveDirection != Vector3.zero)
+            curr_state = 1;
         
 
         //////////////////////////////////////////////////
@@ -109,8 +116,8 @@ public class PlayerController3 : MonoBehaviour
         {
             moveDirection = new Vector3(h, 0, v);
             moveDirection.y = moveDirection.magnitude * climbSpeed;
-        }
-
+        } else if (!CheckGround())
+            curr_state = 2;
 
         if (((gameObject.tag.Equals("Player1") && Input.GetButton("GroundP1")) || (gameObject.tag.Equals("Player2") && Input.GetButton("GroundP2"))) && CheckGround())
         {
@@ -164,15 +171,17 @@ public class PlayerController3 : MonoBehaviour
 				
             }
         }
-		
-		if (moveDirection == Vector3.zero) {
+
+        animator.SetInteger("State", curr_state);
+        
+        /*if (moveDirection == Vector3.zero) {
             animator.SetInteger("State", 0);
             Debug.Log("idle");
         }
         else {
             animator.SetInteger("State", 1);
             Debug.Log("move");
-        }
+        }*/
             
 
         if (moveDirection != Vector3.zero && moveDirection.y == 0)
