@@ -5,17 +5,20 @@ using UnityEngine;
 public class PlayerController3 : MonoBehaviour
 {
 	public GameObject otherPlayer;
+	//public PlayerScript p2script = otherPlayer.GetComponent<PlayerController3>();
     public GameObject model;
-    public float speed = 10.0F;
-    public float climbSpeed = 10.0F;
-    public float jumpSpeed = 3.0F;
+    public float speed = 40.0F;
+    public float climbSpeed = 20.0F;
+    public float jumpSpeed = 5.0F;
     public float maxSpeed = 20.0F;
     public bool isClimbing;
 	//public float throwspeed = 2.0F;
 	//public float slingheight = 25.0F;
     public float RotateSpeed = 30f;
 	public float pounceHeight = 25.0F;
-	public float pounceSpeed = 20.0F;
+	public float addPounceHeight = 2.5F;
+	public float pounceSpeed = 50.0F;
+	public float addPounceSpeed = 5.0F;
     private Vector3 moveDirection = Vector3.zero;
     private CharacterController controller;
     private Rigidbody rb;
@@ -38,7 +41,7 @@ public class PlayerController3 : MonoBehaviour
     }
 
 
-    void Update()
+    void FixedUpdate()
     {
         rb.isKinematic = false;
         float h = 0.0f;
@@ -204,7 +207,13 @@ public class PlayerController3 : MonoBehaviour
             Debug.Log("Collision enter box\n");
         }
 
-       
+		if (other.gameObject.tag == "Snack")
+        {
+            pounceHeight += addPounceHeight;
+            pounceSpeed += addPounceSpeed;
+			otherPlayer.GetComponent<PlayerController3>().pounceHeight += addPounceHeight;
+            otherPlayer.GetComponent<PlayerController3>().pounceSpeed += addPounceSpeed;
+        }
     }
 
     void OnCollisionExit(Collision other)
