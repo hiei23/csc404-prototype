@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4374869, g: 0.48530704, b: 0.5655821, a: 1}
+  m_IndirectSpecularColor: {r: 0.43748677, g: 0.4853075, b: 0.56558245, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -6640,11 +6640,11 @@ GameObject:
   - component: {fileID: 792375983}
   m_Layer: 5
   m_Name: Canvas
-  m_TagString: Climbable
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!222 &792375983
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -13965,6 +13965,16 @@ Prefab:
     - target: {fileID: 4478573245715512, guid: fb3070918c77eb849980c3a7743b72f8, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 64210034363222862, guid: fb3070918c77eb849980c3a7743b72f8,
+        type: 2}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 64259072858167726, guid: fb3070918c77eb849980c3a7743b72f8,
+        type: 2}
+      propertyPath: m_Convex
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fb3070918c77eb849980c3a7743b72f8, type: 2}
