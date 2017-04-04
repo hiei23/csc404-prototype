@@ -10,7 +10,7 @@ public class ScoreCalc : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+        dollorCost.text = "0";
 	}
 	
 	// Update is called once per frame
