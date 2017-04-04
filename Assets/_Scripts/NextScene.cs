@@ -6,8 +6,7 @@ using UnityEngine.SceneManagement;
 [RequireComponent(typeof(AudioSource))]
 public class NextScene : MonoBehaviour {
 
-    public int sceneIndex = 0;
-    
+    private string INSTRUCTION_SCENE = "instructions";   
     AudioSource background_music;
     AudioSource start_button_sound;
     // Use this for initialization
@@ -25,8 +24,7 @@ public class NextScene : MonoBehaviour {
             background_music.volume = 0.1f;
             start_button_sound.Play();
             background_music.volume = 0.5f;
-            SceneManager.LoadScene(sceneIndex);
+            SceneManager.LoadScene(INSTRUCTION_SCENE);
         }
-       
     }
 }
