@@ -12,6 +12,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scene/level2_map1.unity
   - enabled: 1
+    path: Assets/Scene/instructions.unity
+  - enabled: 1
     path: Assets/Scene/end_scene.unity
   - enabled: 1
     path: Assets/Scene/end_scene2.unity
