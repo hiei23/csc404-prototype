@@ -75,9 +75,10 @@ GameObject:
   - component: {fileID: 114211935888458976}
   - component: {fileID: 54546401366498538}
   - component: {fileID: 64302315903950816}
+  - component: {fileID: 114085367624658106}
   m_Layer: 0
   m_Name: Vase2
-  m_TagString: Untagged
+  m_TagString: Breakable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -311,9 +312,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1141432757564642}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 186.70157, y: 31.164108, z: 122.68656}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -52.4, y: 28.28, z: 84.2}
+  m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
   m_Children:
   - {fileID: 4155632616224254}
   - {fileID: 4702784376683214}
@@ -399,8 +400,8 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 46d9f15aeeb535c42898bb09151c0fe1, type: 2}
-  - {fileID: 2100000, guid: 5dff3254b0a7e59499c53dc244e19cad, type: 2}
+  - {fileID: 2100000, guid: baeb4208d7b246b488385db3bd94c940, type: 2}
+  - {fileID: 2100000, guid: baeb4208d7b246b488385db3bd94c940, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -462,7 +463,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: ea7a890824e74f1428fd3eac0865b088, type: 2}
+  - {fileID: 2100000, guid: 6687e5780ad084a4780a69ff5aea08a7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -731,6 +732,19 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114085367624658106
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1453022768486264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8f606494474f9641a6813ae29e69b38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minCost: 100
+  maxCost: 200
 --- !u!114 &114211935888458976
 MonoBehaviour:
   m_ObjectHideFlags: 1
