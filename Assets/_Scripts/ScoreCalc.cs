@@ -21,12 +21,12 @@ public class ScoreCalc : MonoBehaviour {
 
     void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.CompareTag("Breakable"))
+        /*if (other.gameObject.CompareTag("Breakable"))
         {
             int curCost = getCount(dollorCost.text);
             curCost = curCost + other.gameObject.GetComponent<BreakableItem>().getCostOfItem();
             dollorCost.text = SetCountText(curCost);
-        }
+        }*/
         //myObject.GetComponent<MyScript>().MyFunction();
         if (other.gameObject.CompareTag("Snack"))
         {
@@ -46,6 +46,12 @@ public class ScoreCalc : MonoBehaviour {
     string SetCountText(int counter)
     {
         return counter.ToString();        
+    }
+
+    public void addCost (int cost) {
+        int curCost = getCount(dollorCost.text);
+        curCost = cost;
+        dollorCost.text = SetCountText(curCost);
     }
 
 }

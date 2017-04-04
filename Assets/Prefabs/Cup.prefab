@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 114433670855173688}
   m_Layer: 0
   m_Name: Cup
-  m_TagString: Untagged
+  m_TagString: Breakable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38,8 +38,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1989155374297702}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 13.167537, y: 1.14, z: -21.543156}
-  m_LocalScale: {x: 0.1, y: 0.10000006, z: 0.10000006}
+  m_LocalPosition: {x: 12.260941, y: 27.33, z: 40.517487}
+  m_LocalScale: {x: 0.4, y: 0.40000024, z: 0.40000024}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -57,7 +57,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 885fbf162d8c6da439448ecfcd84a44d, type: 2}
+  - {fileID: 2100000, guid: 6687e5780ad084a4780a69ff5aea08a7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -95,7 +95,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!64 &64124408109555918
 MeshCollider:
@@ -124,3 +124,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pieces: {fileID: 1564802802094332, guid: 9625ebd2163d5d34d9889b425939f74d, type: 2}
   force: 5
+  minCost: 10
+  maxCost: 20
