@@ -16,19 +16,25 @@ public class Timer : MonoBehaviour {
     public RawImage tutorial;
     public GameObject UI_timer;
     public GameObject UI_score;
+    public GameObject UI_clock;
 
     public Text dollorCost;
     public Text numSnack;
 
+    private bool endTimer;
+    private float displayTime = 3.0f;
 
     // Use this for initialization
     void Start () {
         //
         isTutorial = true;
         tutorial.enabled = true;
+
         UI_timer.SetActive(false);
         UI_score.SetActive(false);
-        //timerDisplay.text = remainingTime.ToString("F1");
+
+        UI_clock.SetActive(false);
+        endTimer = false;
     }
 	
 	// Update is called once per frame
@@ -48,13 +54,27 @@ public class Timer : MonoBehaviour {
         }else
         {
             remainingTime -= Time.deltaTime;
-            timerDisplay.text = remainingTime.ToString("F1");
-
             if (remainingTime <= 0.0f)
             {
                 timeEnd();
+            }else
+            {
+                timerDisplay.text = remainingTime.ToString("F1");
             }
         }
+
+        // after time is up
+        if (endTimer)
+        {
+            displayTime -= Time.deltaTime;
+            if (displayTime <= 0.0f)
+            {
+                toEndScene();
+            }
+        }
+
+
+
         
 	}
 
@@ -70,13 +90,18 @@ public class Timer : MonoBehaviour {
     {
         PlayerPrefs.SetInt("numFish", getCount(numSnack.text));
         PlayerPrefs.SetInt("totalCost", getCount(dollorCost.text));
-
-        SceneManager.LoadScene("end_scene2", LoadSceneMode.Single);
+        UI_clock.SetActive(true);
+        endTimer = true;        
     }
 
     int getCount(string text)
     {
         int counter = int.Parse(text);
         return counter;
+    }
+
+    void toEndScene()
+    {
+        SceneManager.LoadScene("end_scene2", LoadSceneMode.Single);
     }
 }
