@@ -7,13 +7,12 @@ using UnityEngine.SceneManagement;
 public class Timer : MonoBehaviour {
 
     public Text timerDisplay;
-    public float remainingTime = 120.0f;
+    public float remainingTime;
 
     public float tutorialtime = 8.0f;
 
     private bool isTutorial = true;
 
-    public RawImage tutorial;
     public GameObject UI_timer;
     public GameObject UI_score;
     public GameObject UI_clock;
@@ -28,11 +27,6 @@ public class Timer : MonoBehaviour {
     void Start () {
         //
         isTutorial = true;
-        tutorial.enabled = true;
-
-        UI_timer.SetActive(false);
-        UI_score.SetActive(false);
-
         UI_clock.SetActive(false);
         endTimer = false;
     }
@@ -41,26 +35,14 @@ public class Timer : MonoBehaviour {
 	void Update () {
 
         // display tutorial image for some time
-        if (isTutorial)
+        remainingTime -= Time.deltaTime;
+        if (remainingTime <= 0.0f)
         {
-            tutorialtime -= Time.deltaTime;
-
-            if (tutorialtime <= 0.0f)
-            {
-                isTutorial = false;
-                tutorial.enabled = false;
-                startTimer();
-            }
-        }else
+            timeEnd();
+        }
+        if (remainingTime > 0.0f)
         {
-            remainingTime -= Time.deltaTime;
-            if (remainingTime <= 0.0f)
-            {
-                timeEnd();
-            }else
-            {
-                timerDisplay.text = remainingTime.ToString("F1");
-            }
+            timerDisplay.text = remainingTime.ToString("F1");
         }
 
         // after time is up
@@ -73,17 +55,11 @@ public class Timer : MonoBehaviour {
             }
         }
 
-
-
-        
-	}
+    }
 
     void startTimer()
     {
         timerDisplay.text = remainingTime.ToString("F1");
-        remainingTime = 120.0f;
-        UI_timer.SetActive(true);
-        UI_score.SetActive(true);
     }
 
     void timeEnd()

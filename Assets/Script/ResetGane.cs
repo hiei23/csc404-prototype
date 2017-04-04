@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class ResetGane : MonoBehaviour {
 
-    public int sceneIndex = 0;
     private string MAIN_MENU_SCENE = "Title";
     // Use this for initialization
     void Start()
