@@ -583,3 +583,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pieces: {fileID: 1660434958260554, guid: 06981a0696fd63c4b8904211c62fa92c, type: 2}
   force: 5
+  minCost: 500
+  maxCost: 800

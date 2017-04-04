@@ -23,10 +23,9 @@ GameObject:
   - component: {fileID: 54094816117682158}
   - component: {fileID: 135410027484478180}
   - component: {fileID: 114349504686575298}
-  - component: {fileID: 114727241190155060}
   m_Layer: 0
   m_Name: Vase1
-  m_TagString: Untagged
+  m_TagString: Breakable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -55,7 +54,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1688626455755286}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -0.38754177, y: 12.292297, z: 6.3852615}
+  m_LocalPosition: {x: -0.38754177, y: 5, z: 6.3852615}
   m_LocalScale: {x: 0.7416747, y: 0.7416747, z: 0.7416747}
   m_Children: []
   m_Father: {fileID: 4878589251686850}
@@ -67,9 +66,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1294200119615424}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16, y: 2.6, z: -16.9}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 12.208954, y: 28.5, z: 90.7}
+  m_LocalScale: {x: 0.19999999, y: 0.19999999, z: 0.19999999}
   m_Children:
   - {fileID: 4107769360964690}
   m_Father: {fileID: 0}
@@ -158,19 +157,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pieces: {fileID: 1917041315626984, guid: 9952acb0bcb248d47abfbf0785d4aeb2, type: 2}
   force: 5
---- !u!114 &114727241190155060
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1294200119615424}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8f606494474f9641a6813ae29e69b38, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  minCost: 0
-  maxCost: 0
+  minCost: 30
+  maxCost: 50
 --- !u!135 &135410027484478180
 SphereCollider:
   m_ObjectHideFlags: 1
