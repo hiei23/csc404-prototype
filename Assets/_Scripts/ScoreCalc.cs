@@ -34,6 +34,7 @@ public class ScoreCalc : MonoBehaviour {
             int curCount = getCount(numSnack.text);
             curCount--;
             numSnack.text = SetCountText(curCount);
+            Destroy(other.gameObject);
         }
     }
 
