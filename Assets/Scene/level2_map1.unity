@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.43748686, g: 0.48530775, b: 0.5655831, a: 1}
+  m_IndirectSpecularColor: {r: 0.4374868, g: 0.48530757, b: 0.5655823, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -2303,6 +2303,11 @@ MeshCollider:
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300006, guid: 6fce2a21b07a47346942257aef8a754b, type: 3}
+--- !u!1 &229144568 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1050901920718188, guid: 82822255e4162d544927f8180087a808,
+    type: 2}
+  m_PrefabInternal: {fileID: 1218878364}
 --- !u!1001 &245655214
 Prefab:
   m_ObjectHideFlags: 0
@@ -10231,6 +10236,76 @@ Prefab:
       propertyPath: dollorCost
       value: 
       objectReference: {fileID: 332799087}
+    - target: {fileID: 114556280483277726, guid: 82822255e4162d544927f8180087a808,
+        type: 2}
+      propertyPath: otherPlayer
+      value: 
+      objectReference: {fileID: 229144568}
+    - target: {fileID: 114556280483277726, guid: 82822255e4162d544927f8180087a808,
+        type: 2}
+      propertyPath: model
+      value: 
+      objectReference: {fileID: 1766241447}
+    - target: {fileID: 114556280483277726, guid: 82822255e4162d544927f8180087a808,
+        type: 2}
+      propertyPath: speed
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 114556280483277726, guid: 82822255e4162d544927f8180087a808,
+        type: 2}
+      propertyPath: climbSpeed
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 114556280483277726, guid: 82822255e4162d544927f8180087a808,
+        type: 2}
+      propertyPath: jumpSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114556280483277726, guid: 82822255e4162d544927f8180087a808,
+        type: 2}
+      propertyPath: pounceSpeed
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 114319668856641126, guid: 82822255e4162d544927f8180087a808,
+        type: 2}
+      propertyPath: speed
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 114319668856641126, guid: 82822255e4162d544927f8180087a808,
+        type: 2}
+      propertyPath: climbSpeed
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 114319668856641126, guid: 82822255e4162d544927f8180087a808,
+        type: 2}
+      propertyPath: maxSpeed
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 114319668856641126, guid: 82822255e4162d544927f8180087a808,
+        type: 2}
+      propertyPath: pounceHeight
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 114319668856641126, guid: 82822255e4162d544927f8180087a808,
+        type: 2}
+      propertyPath: pounceSpeed
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 114556280483277726, guid: 82822255e4162d544927f8180087a808,
+        type: 2}
+      propertyPath: pounceHeight
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 114556280483277726, guid: 82822255e4162d544927f8180087a808,
+        type: 2}
+      propertyPath: maxSpeed
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 114556280483277726, guid: 82822255e4162d544927f8180087a808,
+        type: 2}
+      propertyPath: RotateSpeed
+      value: 40
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 82822255e4162d544927f8180087a808, type: 2}
   m_IsPrefabParent: 0
@@ -15435,6 +15510,11 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1749168320}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1766241447 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1927209531843102, guid: 82822255e4162d544927f8180087a808,
+    type: 2}
+  m_PrefabInternal: {fileID: 1218878364}
 --- !u!1 &1767015255
 GameObject:
   m_ObjectHideFlags: 0
