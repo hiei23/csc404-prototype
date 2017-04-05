@@ -852,7 +852,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1449626927133002
 GameObject:
   m_ObjectHideFlags: 1
@@ -1158,7 +1158,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1656534091784668
 GameObject:
   m_ObjectHideFlags: 1
@@ -3183,7 +3183,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 46d9f15aeeb535c42898bb09151c0fe1, type: 2}
+  - {fileID: 2100000, guid: 973983aa1fd0275419df686b5ed959ed, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3338,7 +3338,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 46d9f15aeeb535c42898bb09151c0fe1, type: 2}
+  - {fileID: 2100000, guid: 973983aa1fd0275419df686b5ed959ed, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3493,7 +3493,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 46d9f15aeeb535c42898bb09151c0fe1, type: 2}
+  - {fileID: 2100000, guid: 973983aa1fd0275419df686b5ed959ed, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3524,7 +3524,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 46d9f15aeeb535c42898bb09151c0fe1, type: 2}
+  - {fileID: 2100000, guid: 973983aa1fd0275419df686b5ed959ed, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4153,7 +4153,7 @@ BoxCollider:
   m_GameObject: {fileID: 1257274039574896}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -4473,14 +4473,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   otherPlayer: {fileID: 1425021065107878}
   model: {fileID: 1927209531843102}
-  speed: 20
-  climbSpeed: 10
+  speed: 40
+  climbSpeed: 20
   jumpSpeed: 5
-  maxSpeed: 20
+  maxSpeed: 40
   isClimbing: 0
   RotateSpeed: 30
-  pounceHeight: 25
-  pounceSpeed: 20
+  pounceHeight: 30
+  addPounceHeight: 2.5
+  pounceSpeed: 50
+  addPounceSpeed: 5
 --- !u!114 &114341383472516634
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4541,15 +4543,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   otherPlayer: {fileID: 1050901920718188}
-  model: {fileID: 1302876231530440}
-  speed: 20
-  climbSpeed: 10
-  jumpSpeed: 1.5
-  maxSpeed: 20
+  model: {fileID: 1927209531843102}
+  speed: 40
+  climbSpeed: 20
+  jumpSpeed: 5
+  maxSpeed: 40
   isClimbing: 0
-  RotateSpeed: 30
-  pounceHeight: 25
-  pounceSpeed: 20
+  RotateSpeed: 40
+  pounceHeight: 30
+  addPounceHeight: 2.5
+  pounceSpeed: 50
+  addPounceSpeed: 5
 --- !u!114 &114569295552401738
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4704,7 +4708,7 @@ SkinnedMeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: dc34300eaa8cc874ebf7c2da3d3e62b5, type: 2}
+  - {fileID: 2100000, guid: 973983aa1fd0275419df686b5ed959ed, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
