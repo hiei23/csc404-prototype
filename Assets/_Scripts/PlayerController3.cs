@@ -11,7 +11,7 @@ public class PlayerController3 : MonoBehaviour
     public float climbSpeed = 20.0F;
     public float jumpSpeed = 5.0F;
     public float maxSpeed = 20.0F;
-    public bool isClimbing;
+    //public bool isClimbing;
 	//public float throwspeed = 2.0F;
 	//public float slingheight = 25.0F;
     public float RotateSpeed = 30f;
@@ -34,7 +34,7 @@ public class PlayerController3 : MonoBehaviour
         //controller = GetComponent<CharacterController>();
         rb = GetComponent<Rigidbody>();
 		rb2 = otherPlayer.GetComponent<Rigidbody>();
-        isClimbing = false;
+        //isClimbing = false;
         rb.isKinematic = false;
         animator = model.GetComponent<Animator>();
         animator.speed = 0.25f;
@@ -47,8 +47,8 @@ public class PlayerController3 : MonoBehaviour
         float h = 0.0f;
         float v = 0.0f;
         float d = 0.0f;
-        if (!isClimbing)
-            curr_state = 0;
+        //if (!isClimbing)
+            //curr_state = 0;
         Vector3 delta = new Vector3(0, 0, 0);
         GameObject other;
         if (gameObject.tag.Equals("Player1"))
@@ -115,13 +115,13 @@ public class PlayerController3 : MonoBehaviour
 			timer = 0;
         }*/
 		
-        if (isClimbing)
+        /*if (isClimbing)
         {
             moveDirection = new Vector3(h, 0, v);
             moveDirection.y = moveDirection.magnitude * climbSpeed;
         } else if (!CheckGround())
-            curr_state = 2;
-
+            curr_state = 2;*/
+	
         if (((gameObject.tag.Equals("Player1") && Input.GetButton("GroundP1")) || (gameObject.tag.Equals("Player2") && Input.GetButton("GroundP2"))) && CheckGround())
         {
             moveDirection = new Vector3(h, d, v);
@@ -200,12 +200,12 @@ public class PlayerController3 : MonoBehaviour
 
     void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.tag == "Climbable")
+        /*if (other.gameObject.tag == "Climbable")
         {
             isClimbing = true;
             rb.useGravity = false;
             Debug.Log("Collision enter box\n");
-        }
+        }*/
 
 		if (other.gameObject.tag == "Snack")
         {
@@ -216,7 +216,7 @@ public class PlayerController3 : MonoBehaviour
         }
     }
 
-    void OnCollisionExit(Collision other)
+    /*void OnCollisionExit(Collision other)
     {
         if (other.gameObject.tag == "Climbable")
         {
@@ -224,7 +224,7 @@ public class PlayerController3 : MonoBehaviour
             rb.useGravity = true;
             Debug.Log("Collision Exit\n");
         }
-    }
+    }*/
 
     private bool CheckGround()
     {
