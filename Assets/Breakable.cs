@@ -50,6 +50,7 @@ public class Breakable : MonoBehaviour {
             {
                 Vector3 v = rb.velocity;
                 GameObject p = Instantiate(pieces, transform.position, transform.rotation);
+                Debug.Log(transform.localScale);
                 p.transform.localScale = transform.localScale;
                 p.GetComponent<SendPiecesFlying>().SendFlying(v, mat);
                 collision.gameObject.GetComponent<ScoreCalc>().addCost(cost);

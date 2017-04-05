@@ -75,7 +75,6 @@ GameObject:
   - component: {fileID: 114211935888458976}
   - component: {fileID: 54546401366498538}
   - component: {fileID: 64302315903950816}
-  - component: {fileID: 114085367624658106}
   m_Layer: 0
   m_Name: Vase2
   m_TagString: Breakable
@@ -314,7 +313,7 @@ Transform:
   m_GameObject: {fileID: 1141432757564642}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -52.4, y: 28.28, z: 84.2}
-  m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4155632616224254}
   - {fileID: 4702784376683214}
@@ -329,7 +328,7 @@ Transform:
   m_GameObject: {fileID: 1453022768486264}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: -0.030081749, y: -30.014149, z: 1.375206}
-  m_LocalScale: {x: 0.5, y: 0.40000024, z: 0.40000024}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_Children: []
   m_Father: {fileID: 4678495763643274}
   m_RootOrder: 1
@@ -732,19 +731,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114085367624658106
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1453022768486264}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8f606494474f9641a6813ae29e69b38, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  minCost: 100
-  maxCost: 200
 --- !u!114 &114211935888458976
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -758,6 +744,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pieces: {fileID: 1200576539898604, guid: 7b8d31ef1c228594bae56ccd35fe7c9e, type: 2}
   force: 7
+  minCost: 30
+  maxCost: 60
 --- !u!114 &114835619779549372
 MonoBehaviour:
   m_ObjectHideFlags: 1
